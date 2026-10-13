@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Agrónomo de formación y científico de datos con +6 años de experiencia: del campo a los datos, y de los datos a la IA en producción.">
+<meta name="theme-color" content="#0e0c09">
+<link rel="canonical" href="https://juanmartinsantos.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230e0c09'/%3E%3Cpath d='M10 7v18' stroke='%238fcf6a' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M16 7v18' stroke='%23f2a65a' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M22 7v18' stroke='%23b9a2ff' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="https://juanmartinsantos.github.io/">
+<meta property="og:title" content="Juan Martín · Científico de datos senior · Agrónomo · PhD">
+<meta property="og:description" content="Agrónomo de formación y científico de datos con +6 años de experiencia: del campo a los datos, y de los datos a la IA en producción.">
+<meta property="og:image" content="https://juanmartinsantos.github.io/vista-previa.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<title>Juan Martín · Científico de datos senior · Agrónomo · PhD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  /* Tres hilos: CAMPO (verde), DATOS (ámbar), IA (lila). Se trenzan al final. */
+  :root{
+    --soil:#0e0c09; --soil-2:#16130e; --soil-3:#201b14; --line:#2c261d;
+    --ink:#efe9dc; --muted:#9a9282; --dim:#857d6e; --body:#c9c1b0;
+    --campo:#8fcf6a; --datos:#f2a65a; --ia:#b9a2ff;
+    --serif:"Instrument Serif",Georgia,serif; --mono:"JetBrains Mono",ui-monospace,monospace; --sans:"Inter",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scrollbar-gutter:stable}
+  html.locked{overflow:hidden}
+  body{background:var(--soil);color:var(--ink);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  .wrap{max-width:980px;margin:0 auto;padding:0 32px 0 110px;position:relative}
+
+  /* ---------- HILOS (columna fija a la izquierda) ---------- */
+  .threads{position:fixed;left:36px;top:0;bottom:0;width:44px;z-index:5;pointer-events:none}
+  .threads span{position:absolute;top:0;bottom:0;width:2px;border-radius:2px;transition:opacity .6s,box-shadow .6s;opacity:.12}
+  .threads .t-campo{left:4px;background:var(--campo);color:var(--campo)}
+  .threads .t-datos{left:20px;background:var(--datos);color:var(--datos)}
+  .threads .t-ia{left:36px;background:var(--ia);color:var(--ia)}
+  body[data-th~="campo"] .t-campo,body[data-th~="datos"] .t-datos,body[data-th~="ia"] .t-ia{opacity:.95;box-shadow:0 0 14px currentColor}
+  .threads .lbl{position:absolute;bottom:26px;left:-2px;font:10px var(--mono);color:var(--dim);writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:2px;white-space:nowrap}
+
+  /* ---------- PORTADA ---------- */
+  .cover{min-height:min(100vh,940px);display:flex;flex-direction:column;justify-content:center;padding:120px 0 80px;position:relative}
+  .cover .kicker{font:12px var(--mono);letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
+  .cover h1{font:400 clamp(54px,9vw,128px)/.95 var(--serif);letter-spacing:-2px;margin:0 0 20px}
+  .cover .role{font:600 13px var(--mono);letter-spacing:3px;color:var(--datos);margin-bottom:30px}
+  .cover .intro{font:400 clamp(20px,2.1vw,25px)/1.45 var(--serif);color:var(--body);max-width:780px}
+  .cover .intro i{font-style:italic}
+  .cover .intro .c{color:var(--campo)} .cover .intro .d{color:var(--datos)} .cover .intro .a{color:var(--ia)}
+  .legend3{display:flex;gap:22px;margin-top:40px;font:11px var(--mono);color:var(--muted);flex-wrap:wrap}
+  .legend3 span::before{content:"";display:inline-block;width:18px;height:2px;margin-right:8px;vertical-align:middle}
+  .legend3 .c::before{background:var(--campo)} .legend3 .d::before{background:var(--datos)} .legend3 .a::before{background:var(--ia)}
+  .scroll{margin-top:70px;font:11px var(--mono);color:var(--dim);display:flex;align-items:center;gap:10px}
+  .scroll::after{content:"";width:1px;height:46px;background:linear-gradient(var(--dim),transparent)}
+
+  /* ---------- CAPÍTULOS ---------- */
+  .chapter{padding:110px 0 40px;border-top:1px solid var(--line)}
+  .chap-n{font:12px var(--mono);letter-spacing:3px;text-transform:uppercase;color:var(--muted);display:flex;gap:14px;align-items:center}
+  .chap-n{flex-wrap:wrap}
+  .chap-n b{font-weight:600;color:var(--ink);white-space:nowrap}
+  .chapter h2,.fusion h2{font:400 clamp(44px,6vw,80px)/1 var(--serif);letter-spacing:-1.2px;margin:0 0 22px}
+  .chapter h2 em{font-style:italic}
+  .chapter .open,.fusion .open{font:400 23px/1.5 var(--serif);color:var(--body);max-width:720px}
+
+  /* escena = un momento de la historia */
+  .scene{display:grid;grid-template-columns:150px 1fr;gap:34px;padding:56px 0 18px;position:relative}
+  .scene .when{font:12px/1.7 var(--mono);color:var(--muted);padding-top:8px}
+  .scene .when b{display:block;font:400 30px/1 var(--serif);color:var(--ink);margin-bottom:6px;letter-spacing:-.5px}
+  .scene .where{font:12px var(--mono);color:var(--muted);margin-bottom:14px}
+  .scene h3{font:400 34px/1.1 var(--serif);letter-spacing:-.4px;margin-bottom:6px}
+  .scene .story{font-size:17px;color:var(--body);max-width:640px}
+  .scene .story b{color:var(--ink);font-weight:600}
+  .todo{display:inline-block;margin-top:10px;font:11px var(--mono);color:#1b1810;background:#fee08b;border-radius:4px;padding:2px 8px}
+  .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+  .tag{font:11px var(--mono);border-radius:6px;padding:2px 8px;border:1px solid var(--line);color:var(--body)}
+  .tag.c{border-color:#3a5a2c;color:var(--campo)} .tag.d{border-color:#5e4327;color:var(--datos)} .tag.a{border-color:#4a3f72;color:var(--ia)}
+  .lesson{margin-top:16px;font:400 italic 20px/1.4 var(--serif);color:var(--muted);border-left:2px solid var(--line);padding-left:16px;max-width:600px}
+
+  details{margin-top:16px;max-width:660px}
+  summary{cursor:pointer;font:12px var(--mono);color:var(--muted);list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"+ ";color:var(--campo)}
+  details[open] summary::before{content:"− "}
+  details ul{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:8px}
+  details li{position:relative;padding-left:18px;font-size:14.5px;color:var(--body)}
+  details li::before{content:"";position:absolute;left:2px;top:10px;width:7px;height:1px;background:var(--muted)}
+  details .own{font:11px var(--mono);color:var(--dim);margin-top:10px}
+
+  .bridge{font:400 italic 26px/1.4 var(--serif);color:var(--muted);text-align:center;padding:70px 0 20px;max-width:640px;margin:0 auto}
+
+  /* publicaciones dentro de la tesis */
+  .pubs{margin-top:18px;border-top:1px solid var(--line);max-width:680px}
+  .pub{display:block;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none}
+  .pub b{display:block;font:400 20px/1.25 var(--serif)}
+  .pub span{font:11px var(--mono);color:var(--muted)}
+  .pub:hover b{color:var(--datos)}
+  .courses{columns:2;column-gap:28px;margin-top:12px;font-size:13.5px;color:var(--body)}
+  .courses div{break-inside:avoid;padding:4px 0;border-bottom:1px dashed var(--line)}
+  .courses span{font:11px var(--mono);color:var(--dim);margin-left:6px}
+
+  /* proyectos */
+  .builds{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:40px}
+  .build{background:var(--soil-2);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .build .k{font:11px var(--mono);color:var(--muted)}
+  .build b{display:block;font:400 26px/1.1 var(--serif);margin:6px 0 8px}
+  .build p{font-size:14.5px;color:var(--body)}
+  .build .m{font:11.5px var(--mono);margin-top:10px}
+  .build .repo,.f-links a{display:inline-block;margin-top:12px;font:11.5px var(--mono);color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+  .build .repo:hover,.f-links a:hover{border-color:var(--campo)}
+  .f-links{display:flex;gap:16px}
+
+  /* ---------- FUSIÓN ---------- */
+  .fusion{padding:70px 0 60px;border-top:1px solid var(--line)}
+  .braid{width:100%;height:220px;display:block;margin:20px 0 10px}
+  .braid path{fill:none;stroke-width:2.5;stroke-linecap:round;stroke-dasharray:1400;stroke-dashoffset:1400;transition:stroke-dashoffset 2.6s cubic-bezier(.3,.6,.2,1)}
+  .braid.on path{stroke-dashoffset:0}
+  .braid .one{stroke:#efe9dc;stroke-width:3.5;transition-delay:2.2s}
+  .triad{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+  .tri{border-top:2px solid;padding-top:14px}
+  .tri.c{border-color:var(--campo)} .tri.d{border-color:var(--datos)} .tri.a{border-color:var(--ia)}
+  .tri h4{font:400 26px/1.1 var(--serif)}
+  .tri p{font-size:14.5px;color:var(--body);margin:6px 0 10px}
+  .tri .tags{margin-top:6px}
+
+  .ending{padding:90px 0 140px;text-align:left}
+  .ending p{font:400 clamp(28px,3.4vw,40px)/1.25 var(--serif);max-width:760px}
+  .ending .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+  .btn{font:13px var(--mono);text-decoration:none;border:1px solid var(--line);padding:11px 16px;border-radius:10px;color:var(--ink)}
+  .btn.main{background:var(--ink);color:var(--soil);border-color:var(--ink)}
+  .audit{margin-top:60px;font:11.5px var(--mono);color:var(--dim)}
+
+  /* ---------- AGENTE (solo aparece al final · interruptor) ---------- */
+  .agent-pill{position:fixed;right:22px;bottom:22px;z-index:40;display:flex;align-items:center;gap:10px;background:var(--soil-3);border:1px solid #3d3352;color:var(--ink);font:12px var(--mono);padding:11px 16px;border-radius:40px;cursor:pointer;opacity:0;transform:translateY(16px);pointer-events:none;transition:all .5s}
+  .agent-pill.on{opacity:1;transform:none;pointer-events:auto}
+  .agent-pill .dot{width:8px;height:8px;border-radius:50%;background:var(--ia);box-shadow:0 0 12px var(--ia)}
+  .agent{position:fixed;right:22px;bottom:78px;z-index:41;width:370px;max-width:calc(100vw - 32px);height:500px;max-height:calc(100vh - 120px);background:var(--soil-2);border:1px solid #3d3352;border-radius:18px;display:none;flex-direction:column;overflow:hidden;box-shadow:0 30px 80px -20px rgba(0,0,0,.8)}
+  .agent.open{display:flex}
+  .agent header{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  .agent header b{font:600 13px var(--sans)}
+  .agent header .lock{margin-left:auto;font:10px var(--mono);color:var(--ia);border:1px solid #4a3f72;border-radius:20px;padding:2px 8px}
+  .agent .x{cursor:pointer;color:var(--muted);font:16px var(--mono)}
+  .msgs{flex:1;overflow:auto;padding:16px;display:flex;flex-direction:column;gap:12px}
+  .m{font-size:13.5px;line-height:1.55;max-width:92%}
+  .m.bot{color:#d8d0bf}
+  .m.me{align-self:flex-end;background:var(--soil-3);border:1px solid var(--line);padding:8px 12px;border-radius:12px 12px 2px 12px}
+  .cite{display:inline-block;font:10.5px var(--mono);color:var(--ia);border:1px dashed #4a3f72;border-radius:6px;padding:0 6px;margin:4px 4px 0 0}
+  .sugg{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 12px}
+  .sugg button{font:11.5px var(--sans);background:transparent;color:var(--body);border:1px solid var(--line);border-radius:20px;padding:5px 10px;cursor:pointer}
+  .agent form{display:flex;border-top:1px solid var(--line)}
+  .agent input{flex:1;background:transparent;border:0;color:var(--ink);padding:14px 16px;font:13px var(--sans);outline:none}
+  .agent form button{background:transparent;border:0;color:var(--ia);font:13px var(--mono);padding:0 16px;cursor:pointer}
+
+  .agent .x{background:transparent;border:0}
+
+  /* ---------- FICHAS: la historia es corta; el detalle se abre en un panel lateral ---------- */
+  .more{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font:12px var(--mono);color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:3px;transition:border-color .3s}
+  .more span{color:var(--campo);transition:transform .25s}
+  .more:hover{border-color:var(--campo)}
+  .more:hover span{transform:translateX(4px)}
+  .drawer{position:fixed;inset:0;z-index:70;visibility:hidden;transition:visibility 0s .45s}
+  .drawer.open{visibility:visible;transition-delay:0s}
+  .drawer-bg{position:absolute;inset:0;background:rgba(8,7,5,.66);opacity:0;transition:opacity .4s}
+  .drawer.open .drawer-bg{opacity:1}
+  .drawer-panel{position:absolute;top:0;right:0;bottom:0;width:min(760px,100%);background:var(--soil-2);border-left:1px solid var(--line);overflow-y:auto;overscroll-behavior:contain;transform:translateX(100%);transition:transform .45s cubic-bezier(.2,.7,.2,1);outline:none;box-shadow:-40px 0 90px -30px rgba(0,0,0,.8)}
+  .drawer.open .drawer-panel{transform:none}
+  .drawer-bar{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:rgba(22,19,14,.94);border-bottom:1px solid var(--line);font:11px var(--mono);color:var(--muted)}
+  .drawer-x{background:transparent;border:1px solid var(--line);border-radius:20px;color:var(--ink);font:12px var(--mono);padding:5px 12px;cursor:pointer}
+  .drawer-x:hover{border-color:var(--muted)}
+  .ficha{padding:34px 44px 10px}
+  .f-k{font:11px var(--mono);letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+  .ficha h2{font:400 clamp(40px,5vw,60px)/1 var(--serif);letter-spacing:-1px;margin:12px 0 10px}
+  .f-sub{font:13px/1.6 var(--mono);color:var(--body)}
+  .f-link{display:inline-block;margin-top:8px;font:11px var(--mono);color:var(--dim);text-decoration:none}
+  .f-sec{margin-top:38px}
+  .f-sec>h3{display:flex;align-items:center;gap:12px;margin-bottom:14px;font:11px var(--mono);letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+  .f-sec>h3::after{content:"";flex:1;height:1px;background:var(--line)}
+  .f-sec>p{font-size:16px;color:var(--body);max-width:620px}
+  .f-sec>p+p{margin-top:10px}
+  .f-projs{display:grid;gap:10px}
+  .f-proj{background:var(--soil);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .f-proj b{display:block;font:400 23px/1.15 var(--serif);margin-bottom:6px;padding-right:96px}
+  .f-proj p{font-size:14.5px;color:var(--body)}
+  .f-proj .tags{margin-top:10px}
+  .own-tag{float:right;margin-top:3px;font:10.5px var(--mono);border:1px solid var(--line);border-radius:20px;padding:1px 9px;color:var(--muted)}
+  .own-tag.dev{color:var(--campo);border-color:#3a5a2c}
+  .own-tag.mant{color:var(--datos);border-color:#5e4327}
+  .f-list{list-style:none;display:flex;flex-direction:column;gap:9px;max-width:620px}
+  .f-list li{position:relative;padding-left:18px;font-size:15px;color:var(--body)}
+  .f-list li::before{content:"";position:absolute;left:2px;top:11px;width:7px;height:1px;background:var(--muted)}
+  .f-flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font:12px var(--mono);color:var(--body)}
+  .f-flow span{border:1px solid #5e4327;border-radius:8px;padding:5px 10px}
+  .f-flow i{font-style:normal;color:var(--dim)}
+  .f-cols{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .f-own{margin-top:30px;font:11.5px var(--mono);color:var(--dim)}
+  .f-sec .btn{display:inline-block;margin-top:2px}
+  .drawer-nav{display:flex;justify-content:space-between;gap:16px;margin:40px 44px 0;padding:18px 0 48px;border-top:1px solid var(--line)}
+  .drawer-nav a{max-width:48%;font:11px var(--mono);color:var(--muted);text-decoration:none}
+  .drawer-nav a b{display:block;margin-top:4px;font:400 21px/1.2 var(--serif);color:var(--ink)}
+  .drawer-nav a:hover b{color:var(--campo)}
+  .drawer-nav .nx{margin-left:auto;text-align:right}
+  /* formación continua */
+  .strip{display:block;max-width:640px;margin-top:22px;padding:18px 20px;background:var(--soil-2);border:1px solid var(--line);border-radius:16px;text-decoration:none;transition:border-color .3s}
+  .strip:hover{border-color:#5e4327}
+  .strip .yrs{display:flex;gap:22px;align-items:flex-end}
+  .strip .yr{display:flex;flex-direction:column-reverse;align-items:center;gap:5px;font:11px var(--mono);color:var(--muted)}
+  .strip .yr i{width:9px;height:9px;border-radius:50%;background:var(--datos)}
+  .strip .cap{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:16px;font:12px var(--mono);color:var(--body)}
+  .strip .cap .c{color:var(--campo)} .strip .cap .go{margin-left:auto;color:var(--ink)}
+  .strip{position:relative}
+  .strip .yr i{position:relative}
+  .strip .yr i::after{content:"";position:absolute;inset:-7px}
+  .strip .yr i:hover{outline:2px solid var(--ink);outline-offset:1px}
+  .hleg{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin-top:16px;font:11px var(--mono);color:var(--muted)}
+  .hleg span{margin-right:6px}
+  .hleg i{width:10px;height:10px;border-radius:50%}
+  .hleg span:last-child{margin:0 0 0 6px}
+  .tip{position:absolute;z-index:3;pointer-events:none;background:var(--soil-3);border:1px solid var(--line);border-radius:8px;padding:6px 10px;white-space:nowrap;transform:translate(-50%,-100%);opacity:0;transition:opacity .15s}
+  .tip.on{opacity:1}
+  .tip b{display:block;font:600 13px var(--sans);color:var(--ink)}
+  .tip span{font:11px var(--mono);color:var(--muted)}
+  .when b{white-space:nowrap}
+  .pubs-k{margin-top:20px;font:11px var(--mono);letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+  .pubs-k+.pubs{margin-top:8px}
+  .f-pubs{margin-top:0;max-width:none}
+  .f-jump{display:flex;flex-wrap:wrap;gap:6px}
+  .f-jump button{background:transparent;border:1px solid var(--line);border-radius:20px;color:var(--body);font:11.5px var(--sans);padding:5px 11px;cursor:pointer}
+  .f-jump button:hover{border-color:var(--muted)}
+  .f-group{margin-top:30px;scroll-margin-top:64px}
+  .f-group h4{display:flex;align-items:baseline;justify-content:space-between;gap:12px;font:400 25px/1.1 var(--serif);margin-bottom:6px}
+  .f-group h4 span{font:11px var(--mono);color:var(--muted)}
+  details.course{margin-top:0;max-width:none;border-bottom:1px solid var(--line)}
+  .course summary,.course-row{display:flex;gap:12px;padding:11px 0;font:15px/1.45 var(--sans);color:var(--ink)}
+  .course-row{border-bottom:1px solid var(--line)}
+  .course-row::before{content:"· ";color:var(--dim)}
+  .course .y,.course-row .y{margin-left:auto;font:11px var(--mono);color:var(--dim);white-space:nowrap;padding-top:3px}
+  .course ul{margin:0 0 14px}
+  .course .rel{margin:0 0 14px 18px;font:12px var(--mono);color:var(--muted)}
+  .course .rel a{color:var(--campo)}
+
+  /* ---------- ANIMACIÓN: columna fija a la derecha en escritorio; de fondo y tenue en pantallas estrechas ---------- */
+  .col{position:relative;z-index:1}
+  .viz{position:fixed;left:0;right:0;top:0;height:100vh;height:100lvh;z-index:0;pointer-events:none;opacity:.3}
+  .viz canvas{width:100%;height:100%;display:block}
+  .ending{min-height:70vh;display:flex;flex-direction:column;justify-content:center}
+  @media (min-width:1024px){
+    .stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr)}
+    .col{grid-column:1;grid-row:1;min-width:0}
+    .viz{position:sticky;grid-column:2;grid-row:1;align-self:start;height:100vh;opacity:1;pointer-events:auto}
+    .wrap{max-width:none;padding:0 28px 0 110px}
+    .cover h1{font-size:clamp(54px,7vw,112px)}
+    #experiencia .scene{min-height:56vh;align-content:center}
+    .ending{min-height:100vh}
+    .braid{display:none}            /* la trenza la dibuja la animación */
+    .triad{grid-template-columns:1fr}
+  }
+  @media (min-width:1024px) and (max-width:1279px){.builds{grid-template-columns:1fr}}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .9s,transform .9s}
+  .reveal.on{opacity:1;transform:none}
+  .cap .reveal{opacity:1;transform:none}
+  .cap *{transition:none!important}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none}
+    *,*::before,*::after{transition:none!important}
+    .braid path{stroke-dashoffset:0}
+  }
+
+  @media (max-width:820px){
+    .wrap{padding:0 20px 0 52px}
+    .threads{left:12px;width:30px}
+    .threads .t-datos{left:12px}.threads .t-ia{left:20px}
+    .threads .lbl{display:none}
+    .scene{grid-template-columns:1fr;gap:8px;padding-top:40px}
+    .builds,.triad,.f-cols{grid-template-columns:1fr}
+    .courses{columns:1}
+    .ficha{padding:26px 20px 10px}
+    .drawer-bar{padding:12px 20px}
+    .drawer-nav{margin:36px 20px 0}
+    .f-proj b{padding-right:0}
+    .own-tag{float:none;display:inline-block;margin:0 0 8px}
+  }
+</style>
+</head>
+<body data-th="campo datos ia">
+
+<div class="threads"><span class="t-campo"></span><span class="t-datos"></span><span class="t-ia"></span><div class="lbl">campo · datos · ia</div></div>
+
+<main class="stage">
+<div class="col">
+
+<!-- ================= PORTADA ================= -->
+<header class="wrap cover" data-th="campo datos ia">
+  <h1>Juan Martín</h1>
+  <div class="role">CIENTÍFICO DE DATOS SENIOR · AGRÓNOMO · PhD</div>
+  <p class="intro"><span class="c">Agrónomo de formación</span> y <span class="d">científico de datos con +6 años de experiencia</span>. Construyo modelos de machine learning para problemas reales, como la previsión de cosecha, el abonado, la logística o la recomendación de productos, y los llevo <span class="a">desde la viabilidad hasta producción</span>.</p>
+  <div class="legend3"><span class="c">campo</span><span class="d">datos</span><span class="a">inteligencia artificial</span></div>
+  <div class="scroll">la trayectoria</div>
+</header>
+
+<!-- ================= EXPERIENCIA ================= -->
+<section class="chapter wrap" id="experiencia" data-th="campo">
+  <h2>Experiencia</h2>
+  <p class="open">Del sector agrícola a los datos, y de los datos a la IA en producción: cada etapa sumó una pieza a la siguiente.</p>
+
+  <div class="scene reveal" data-escena="0" data-th="campo">
+    <div class="when"><b>2013</b>– 2017<br>Venezuela</div>
+    <div>
+      <h3>Ingeniero agrónomo · área comercial</h3>
+      <div class="where">Plátanos y Frutas Abanico · Crop Offer · Agropatria</div>
+      <p class="story">Trabajo comercial en el sector agrícola: <b>visitas a agricultores, asesoramiento y venta de productos agrícolas</b>.</p>
+      <p class="lesson">El punto de partida: el campo, desde dentro.</p>
+      <div class="tags"><span class="tag c">agronomía</span><span class="tag c">asesoría a agricultores</span><span class="tag c">comercialización agro</span></div>
+    </div>
+  </div>
+
+  <div class="scene reveal" data-escena="1" data-th="campo datos">
+    <div class="when"><b>2017</b>oct 2017 – ene 2020<br>Salamanca</div>
+    <div>
+      <h3>Data Scientist / Investigador</h3>
+      <div class="where">Universidad de Salamanca · programa «Retención de Jóvenes Talentos»</div>
+      <p class="story">Inicio de mi carrera investigadora en <b>machine learning</b> aplicado a la agricultura inteligente, origen de mi tesis doctoral y de 3 publicaciones de alto impacto. Un stacking-ensemble para predecir la <b>evapotranspiración</b> superó a 7 técnicas de minería y a 15 ecuaciones empíricas en 20 conjuntos de datos reales (77 estaciones meteorológicas).</p>
+      <p class="lesson">El campo, visto desde los datos.</p>
+      <div class="tags"><span class="tag c">agricultura inteligente</span><span class="tag d">ensembles</span><span class="tag d">filtros de ruido</span><span class="tag d">R · Python</span></div>
+      <a class="more" href="#ficha-usal">ver la ficha completa <span>→</span></a>
+    </div>
+  </div>
+
+  <div class="scene reveal" data-escena="2" data-th="datos">
+    <div class="when"><b>2020</b>ene 2020 – mar 2021<br>remoto</div>
+    <div>
+      <h3>Data Scientist</h3>
+      <div class="where">Banco Santander · vía Grupo Solutio · dpto. ML e IA</div>
+      <p class="story">Servicio a los modelos de <b>scoring</b> de campañas comerciales y de riesgo, trabajando directamente con negocio: preparación de datos, generación de predicciones y entrega de listados accionables con feedback real de conversión.</p>
+      <p class="lesson">Los datos, a escala de empresa.</p>
+      <div class="tags"><span class="tag d">minería de datos</span><span class="tag d">feature engineering</span><span class="tag d">SQL · Python · R</span></div>
+      <a class="more" href="#ficha-santander">ver la ficha completa <span>→</span></a>
+    </div>
+  </div>
+
+  <div class="scene reveal" data-escena="3" data-th="campo datos">
+    <div class="when"><b>2021</b>jun 2021 – sep 2022<br>híbrido</div>
+    <div>
+      <h3>Data Scientist</h3>
+      <div class="where">Helphone · proyecto estratégico de I+D IAFOOD</div>
+      <p class="story">Soluciones de ML para el sector agroalimentario: el <b>backend de IA de la plataforma IAFOOD</b> (pipelines de preprocesamiento, preparación de datos y modelado), para que las agroempresas usen la IA de forma autónoma, y una <b>solución AutoML propia</b>. Pieza clave en la puesta en marcha del nuevo departamento de IA.</p>
+      <p class="lesson">De vuelta al campo, ahora con datos.</p>
+      <div class="tags"><span class="tag c">agroalimentario</span><span class="tag d">pipelines de datos</span><span class="tag a">AutoML propio</span><span class="tag d">Python · R · Knime</span></div>
+      <a class="more" href="#ficha-helphone">ver la ficha completa <span>→</span></a>
+    </div>
+  </div>
+
+  <div class="scene reveal" data-escena="4" data-th="campo datos ia">
+    <div class="when"><b>2022</b>sep 2022 – dic 2025<br>remoto</div>
+    <div>
+      <h3>Senior Data Scientist</h3>
+      <div class="where">Hispatec · Agrointeligencia</div>
+      <p class="story">Soluciones de IA para la agroindustria <b>de principio a fin</b>, desde la viabilidad hasta producción: predicción de cosecha en frambuesa, arándano y pimiento, recomendación de abonado, optimización logística del reparto y un motor AutoML propio.</p>
+      <p class="lesson">La etapa en la que la agronomía y los datos trabajaron juntos.</p>
+      <div class="tags"><span class="tag c">frambuesa · arándano · pimiento</span><span class="tag c">aguacate · mango</span><span class="tag d">forecasting</span><span class="tag d">optimización</span><span class="tag a">AutoML propio</span></div>
+      <a class="more" href="#ficha-hispatec">ver la ficha completa <span>→</span></a>
+    </div>
+  </div>
+
+  <div class="scene reveal" data-escena="5" data-th="datos ia">
+    <div class="when"><b>2026</b>ene 2026 – hoy<br>remoto</div>
+    <div>
+      <h3>Senior Data Scientist (AI/ML Engineer)</h3>
+      <div class="where">El Corte Inglés · vía ALTEN · dpto. IA</div>
+      <p class="story">En el equipo de IA del e-commerce, con millones de clientes: mantenimiento y evolución de los motores de recomendación del proyecto XSell (<b>embeddings, LLMs</b> y visión por computador) y desarrollo de nuevos servicios, como la recomendación en cesta. Promoción de cambios a producción con CI/CD, pytest y Locust.</p>
+      <p class="lesson">La IA generativa, a escala de millones.</p>
+      <div class="tags"><span class="tag a">LLMs (OpenAI)</span><span class="tag a">embeddings</span><span class="tag d">FastAPI</span><span class="tag d">Kubernetes · CI/CD</span></div>
+      <a class="more" href="#ficha-eci">ver la ficha completa <span>→</span></a>
+    </div>
+  </div>
+</section>
+
+<p class="bridge wrap reveal">Mientras trabajaba, nunca dejé de aprender.</p>
+
+<!-- ================= FORMACIÓN ================= -->
+<section class="chapter wrap" id="formacion" data-escena="6" data-th="campo datos">
+  <h2>Formación</h2>
+  <p class="open">Una base agronómica, una formación en ingeniería y un doctorado que unió las dos.</p>
+
+  <div class="scene reveal" data-th="campo">
+    <div class="when"><b>2013</b>Venezuela</div>
+    <div>
+      <h3>Grado en Ingeniería Agronómica</h3>
+      <div class="where">Universidad Nacional Experimental del Táchira</div>
+    </div>
+  </div>
+  <div class="scene reveal" data-th="campo datos">
+    <div class="when"><b>2018</b>España</div>
+    <div>
+      <h3>Máster en Ingeniería</h3>
+      <div class="where">Universidad de Salamanca</div>
+    </div>
+  </div>
+  <div class="scene reveal" data-th="campo datos">
+    <div class="when"><b>2025</b>España</div>
+    <div>
+      <h3>PhD en Ciencia de Datos</h3>
+      <div class="where">Universidad de Salamanca</div>
+      <p class="story">Tesis sobre <b>predicción en agricultura inteligente</b> y <b>robustez de los modelos frente al ruido</b> de los datos, como el de los sensores IoT del campo.</p>
+      <p class="lesson">La tesis que unió los dos mundos.</p>
+      <div class="pubs-k">Tres publicaciones</div>
+      <div class="pubs">
+        <a class="pub" href="https://doi.org/10.1016/j.eswa.2023.121608" target="_blank" rel="noopener"><b>Tackling the problem of noisy IoT sensor data in smart agriculture</b><span>Expert Systems with Applications · Elsevier · 2024</span></a>
+        <a class="pub" href="https://doi.org/10.1016/j.asoc.2021.107509" target="_blank" rel="noopener"><b>On the suitability of stacking-based ensembles in smart agriculture for evapotranspiration prediction</b><span>Applied Soft Computing · Elsevier · 2021</span></a>
+        <a class="pub" href="https://doi.org/10.1109/ACCESS.2021.3123151" target="_blank" rel="noopener"><b>On the Regressand Noise Problem: Model Robustness and Synergy With Regression-Adapted Noise Filters</b><span>IEEE Access · 2021</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="scene reveal" data-th="campo datos">
+    <div class="when"><b>2019 – 2025</b></div>
+    <div>
+      <h3>Formación complementaria</h3>
+      <p class="story">14 cursos de datos e IA, del diseño de experimentos al deep learning, y 7 de campo y energía.</p>
+      <a class="strip" href="#ficha-formacion" id="strip" aria-label="Ver la ficha de formación complementaria con todos los temarios"></a>
+    </div>
+  </div>
+</section>
+
+<p class="bridge wrap reveal">Y lo que aprendía de día, lo probaba por mi cuenta.</p>
+
+<!-- ================= PROYECTOS ================= -->
+<section class="chapter wrap" id="proyectos" data-escena="7" data-th="datos ia">
+  <h2>Proyectos propios</h2>
+  <p class="open">Curiosidad con código: proyectos donde pruebo lo último, como agentes, visión por computador y aplicaciones completas construidas orquestando IA.</p>
+  <div class="builds reveal" id="builds"></div>
+</section>
+
+<p class="bridge wrap reveal">Tres hilos, una sola persona.</p>
+
+<!-- ================= HABILIDADES (sin título: las líneas que se trenzan hacen de entrada) ================= -->
+<section class="fusion wrap" id="fusion" data-escena="8" data-th="campo datos ia" aria-label="Habilidades">
+  <svg class="braid" id="braid" viewBox="0 0 900 220" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,40 C200,40 260,110 450,110 S700,110 900,110" stroke="#8fcf6a"/>
+    <path d="M0,110 C180,110 300,60 450,110 S700,110 900,110" stroke="#f2a65a"/>
+    <path d="M0,180 C200,180 260,110 450,110 S700,110 900,110" stroke="#b9a2ff"/>
+    <path class="one" d="M450,110 L900,110"/>
+  </svg>
+  <div class="triad">
+    <div class="tri c"><h4>Campo</h4><p>Para entender el problema: cómo crece un cultivo, qué agua pide, qué se cosecha y cómo se mueve.</p><div class="tags"><span class="tag c">predicción de cosecha en frutos rojos y hortícolas</span><span class="tag c">fertilización y abonado</span><span class="tag c">riego y evapotranspiración</span><span class="tag c">estaciones meteorológicas y sensores IoT</span><span class="tag c">lesiones en hoja</span><span class="tag c">logística de cosecha y reparto</span></div></div>
+    <div class="tri d"><h4>Datos</h4><p>Para medirlo y predecirlo, con modelos robustos aunque el dato llegue sucio.</p><div class="tags"><span class="tag d">calidad del dato y AutoML</span><span class="tag d">forecasting y series temporales</span><span class="tag d">Python · R · SQL</span><span class="tag d">ensembles</span><span class="tag d">optimización logística</span><span class="tag d">Power BI · Streamlit</span></div></div>
+    <div class="tri a"><h4>Inteligencia artificial</h4><p>Para llevarlo a producción y hacerlo útil cada día.</p><div class="tags"><span class="tag a">LLMs · RAG · agentes de IA</span><span class="tag a">recomendación (kNN, embeddings)</span><span class="tag a">visión por computador (SAM2)</span><span class="tag a">FastAPI · Docker · Kubernetes</span><span class="tag a">CI/CD (GitHub Actions) · pytest</span><span class="tag a">MongoDB</span></div></div>
+  </div>
+</section>
+
+<section class="ending wrap" data-escena="9" data-th="campo datos ia" id="contacto">
+  <p class="reveal">Esa es mi historia hasta hoy. Si quieres saber más, aquí estoy.</p>
+  <div class="links"><a class="btn main" href="https://www.linkedin.com/in/juanmmartin" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/juanmartinsantos" target="_blank" rel="noopener">GitHub</a></div>
+  <div class="audit">© 2026 Juan Martín</div>
+</section>
+
+</div>
+<div class="viz" aria-hidden="true"><canvas id="cv"></canvas></div>
+</main>
+
+<!-- ================= AGENTE: aparece solo al final · interruptor ================= -->
+<button type="button" class="agent-pill" id="pill"><span class="dot"></span>¿alguna pregunta? habla con mi agente</button>
+<div class="agent" id="agent">
+  <header><span class="dot" style="width:8px;height:8px;border-radius:50%;background:var(--ia)"></span><b>Agente de Juan</b><span class="lock">aislado · solo conoce esta web</span><button type="button" class="x" id="ax" aria-label="Cerrar el agente">×</button></header>
+  <div class="msgs" id="msgs"></div>
+  <div class="sugg" id="sugg"></div>
+  <form id="af"><input id="ain" placeholder="Pregunta sobre su trayectoria…" autocomplete="off"><button>enviar</button></form>
+</div>
+
+<!-- ================= FICHAS: panel lateral (enlace directo: #ficha-…) ================= -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-bg" data-close></div>
+  <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Ficha" tabindex="-1">
+    <div class="drawer-bar"><span id="drawer-pos">ficha</span><button type="button" class="drawer-x" data-close>cerrar ✕</button></div>
+    <div id="drawer-body"></div>
+    <nav class="drawer-nav" id="drawer-nav" aria-label="Otras fichas"></nav>
+  </div>
+</div>
+
+<div id="fichas" hidden>
+
+<article class="ficha" id="ficha-usal" data-title="Universidad de Salamanca" data-th="campo datos">
+  <div class="f-k">Experiencia · oct 2017 – ene 2020 · Salamanca</div>
+  <h2>Universidad de Salamanca</h2>
+  <div class="f-sub">Data Scientist / Investigador · departamento de Inteligencia Artificial · programa «Retención de Jóvenes Talentos»</div>
+  <a class="f-link" href="#ficha-usal">enlace directo · #ficha-usal</a>
+  <section class="f-sec"><h3>Contexto</h3>
+    <p>Como investigador del departamento de Inteligencia Artificial me especialicé en técnicas de minería de datos y machine learning para problemas medioambientales y de agricultura inteligente: desde la búsqueda y la preparación de los datos hasta la creación y la validación de modelos predictivos.</p>
+    <p>Fue el inicio de mi carrera investigadora y el origen de mi tesis doctoral.</p>
+  </section>
+  <section class="f-sec"><h3>Proyectos</h3>
+    <div class="f-projs">
+      <div class="f-proj"><span class="own-tag dev">desarrollo</span><b>Predicción de la evapotranspiración con ensembles</b><p>Un stacking-ensemble para estimar la evapotranspiración y mejorar la planificación del riego. Superó a 7 técnicas de minería y a 15 ecuaciones empíricas en 20 conjuntos de datos reales (77 estaciones meteorológicas).</p><div class="tags"><span class="tag c">riego</span><span class="tag d">stacking</span><span class="tag d">regresión</span></div><div class="f-links"><a href="https://github.com/juanmartinsantos/et0stacking" target="_blank" rel="noopener">código en GitHub ↗</a></div></div>
+      <div class="f-proj"><span class="own-tag dev">desarrollo</span><b>Filtros de ruido para regresión</b><p>Diseño y adaptación de 14 técnicas de preprocesamiento (filtros de ruido) para datos de regresión, publicadas con el artículo original, que mejoran la robustez de los modelos frente al ruido de los sensores IoT.</p><div class="tags"><span class="tag d">calidad del dato</span><span class="tag c">sensores IoT</span></div></div>
+      <div class="f-proj"><span class="own-tag dev">desarrollo</span><b>Paquete rgnoisefilt (R, CRAN)</b><p>Paquete open source que amplía esos filtros hasta 22. Más de 11.700 descargas.</p><div class="tags"><span class="tag d">R</span><span class="tag d">open source</span></div><div class="f-links"><a href="https://github.com/juanmartinsantos/rgnoisefilt" target="_blank" rel="noopener">código en GitHub ↗</a><a href="https://CRAN.R-project.org/package=rgnoisefilt" target="_blank" rel="noopener">CRAN ↗</a></div></div>
+      <div class="f-proj"><span class="own-tag">colaboración</span><b>Previsión de la producción de energía solar fotovoltaica</b><p>Colaboración en el desarrollo de modelos predictivos para estimar la producción de plantas fotovoltaicas y optimizar la gestión de sus recursos.</p><div class="tags"><span class="tag d">forecasting</span><span class="tag c">energía</span></div></div>
+    </div>
+  </section>
+  <section class="f-sec"><h3>Publicaciones</h3>
+    <div class="pubs f-pubs">
+      <a class="pub" href="https://doi.org/10.1016/j.eswa.2023.121608" target="_blank" rel="noopener"><b>Tackling the problem of noisy IoT sensor data in smart agriculture</b><span>Expert Systems with Applications · Elsevier · 2024</span></a>
+      <a class="pub" href="https://doi.org/10.1016/j.asoc.2021.107509" target="_blank" rel="noopener"><b>On the suitability of stacking-based ensembles in smart agriculture for evapotranspiration prediction</b><span>Applied Soft Computing · Elsevier · 2021</span></a>
+      <a class="pub" href="https://doi.org/10.1109/ACCESS.2021.3123151" target="_blank" rel="noopener"><b>On the Regressand Noise Problem: Model Robustness and Synergy With Regression-Adapted Noise Filters</b><span>IEEE Access · 2021</span></a>
+    </div>
+  </section>
+  <div class="f-cols">
+    <section class="f-sec"><h3>Técnicas</h3><div class="tags"><span class="tag d">k-NN</span><span class="tag d">SVM</span><span class="tag d">ELM</span><span class="tag d">ANN</span><span class="tag d">XGBoost</span><span class="tag d">GBM</span><span class="tag d">Random Forest</span><span class="tag d">MARS</span><span class="tag d">regresión lineal</span><span class="tag d">Lasso</span><span class="tag d">bagging</span><span class="tag d">boosting</span><span class="tag d">stacking</span></div></section>
+    <section class="f-sec"><h3>Herramientas</h3><div class="tags"><span class="tag">R</span><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">GitHub</span></div></section>
+  </div>
+  <p class="f-own">// propiedad real: investigación propia, salvo la previsión fotovoltaica (colaboración)</p>
+</article>
+
+<article class="ficha" id="ficha-santander" data-title="Banco Santander" data-th="datos">
+  <div class="f-k">Experiencia · ene 2020 – mar 2021 · remoto</div>
+  <h2>Banco Santander</h2>
+  <div class="f-sub">Data Scientist · vía Grupo Solutio · departamento de Machine Learning e IA</div>
+  <a class="f-link" href="#ficha-santander">enlace directo · #ficha-santander</a>
+  <section class="f-sec"><h3>Contexto</h3>
+    <p>En el departamento de Machine Learning e Inteligencia Artificial de Banco Santander, a través de Grupo Solutio, daba servicio a los modelos de scoring de campañas comerciales y de riesgo. Preparaba y transformaba grandes volúmenes de datos, generaba las predicciones con modelos ya desarrollados, me ocupaba de su mantenimiento y de sus copias de seguridad en producción, y redactaba la documentación técnica.</p>
+    <p>Trabajaba directamente con negocio: entregábamos listados de clientes y veíamos qué pasaba con cada uno, con datos reales de conversión.</p>
+  </section>
+  <section class="f-sec"><h3>Cómo trabajaba</h3>
+    <div class="f-flow"><span>preparar los datos</span><i>→</i><span>evaluar el modelo</span><i>→</i><span>iterar sobre los datos</span><i>→</i><span>entregar el listado a negocio</span><i>→</i><span>medir la conversión</span></div>
+  </section>
+  <section class="f-sec"><h3>Modelos con los que trabajé</h3>
+    <div class="f-projs">
+      <div class="f-proj"><span class="own-tag mant">mantenimiento</span><b>Venta cruzada</b><p>Predicciones para identificar a los clientes con más probabilidad de operar en distintos mercados de valores, para las campañas de venta cruzada del banco.</p></div>
+      <div class="f-proj"><span class="own-tag mant">mantenimiento</span><b>Retención de clientes</b><p>Predicciones para detectar a los clientes con alto riesgo de darse de baja, de forma que el banco pudiera actuar a tiempo.</p></div>
+      <div class="f-proj"><span class="own-tag mant">mantenimiento</span><b>Segmentación de empresas</b><p>Segmentación según el rendimiento o el ingreso mensual de las empresas, para ofrecerles tipos de interés personalizados.</p></div>
+      <div class="f-proj"><span class="own-tag">preparación de datos</span><b>Riesgo, impago y fraude</b><p>Minería de datos y feature engineering para los modelos de riesgo e impago y de fraude.</p></div>
+    </div>
+  </section>
+  <div class="f-cols">
+    <section class="f-sec"><h3>Técnicas</h3><div class="tags"><span class="tag d">SVM</span><span class="tag d">XGBoost</span><span class="tag d">regresión logística</span><span class="tag d">PCA</span><span class="tag d">t-SNE</span><span class="tag d">feature engineering</span><span class="tag d">segmentación</span></div></section>
+    <section class="f-sec"><h3>Herramientas</h3><div class="tags"><span class="tag">R</span><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">GitLab</span><span class="tag">AWS</span></div></section>
+  </div>
+  <section class="f-sec"><h3>Referencias</h3>
+    <p>Carta de recomendación de Grupo Solutio (mayo de 2021).</p>
+  </section>
+  <p class="f-own">// propiedad real: mantenimiento y generación de predicciones con modelos ya desarrollados · interlocución con negocio</p>
+</article>
+
+<article class="ficha" id="ficha-helphone" data-title="Helphone" data-th="campo datos">
+  <div class="f-k">Experiencia · jun 2021 – sep 2022 · híbrido</div>
+  <h2>Helphone</h2>
+  <div class="f-sub">Data Scientist · departamento de Machine Learning e IA · proyecto estratégico de I+D IAFOOD</div>
+  <a class="f-link" href="#ficha-helphone">enlace directo · #ficha-helphone</a>
+  <section class="f-sec"><h3>Contexto</h3>
+    <p>En el equipo técnico del departamento de Machine Learning e IA diseñé e implementé técnicas de preprocesamiento y algoritmos para problemas de la industria agroalimentaria: clasificación, regresión, series temporales y aprendizaje no supervisado. La mayor parte del trabajo fue para IAFOOD, un proyecto estratégico de I+D.</p>
+    <p>Además, fui pieza clave en la puesta en marcha del nuevo departamento de IA.</p>
+  </section>
+  <section class="f-sec"><h3>Proyectos</h3>
+    <div class="f-projs">
+      <div class="f-proj"><span class="own-tag dev">desarrollo</span><b>Backend de IA de la plataforma IAFOOD</b><p>Pipelines de preprocesamiento, preparación de datos y modelado para que las agroempresas usen la IA de forma autónoma.</p><div class="tags"><span class="tag c">agroindustria</span><span class="tag d">pipelines de datos</span></div></div>
+      <div class="f-proj"><span class="own-tag dev">desarrollo</span><b>Solución AutoML propia</b><p>Sistema que integra técnicas de preprocesamiento y algoritmos de machine learning para procesar los datos de forma automática, con más eficiencia y precisión en los proyectos agroalimentarios.</p><div class="tags"><span class="tag a">AutoML</span><span class="tag d">calidad del dato</span></div></div>
+      <div class="f-proj"><span class="own-tag">participación</span><b>Recomendación con aprendizaje por refuerzo</b><p>Desarrollo del backend de un sistema de recomendación basado en aprendizaje por refuerzo, para optimizar las estrategias de venta de distintas empresas. Fue el proyecto inicial del nuevo departamento de IA.</p><div class="tags"><span class="tag a">aprendizaje por refuerzo</span><span class="tag a">recomendación</span></div></div>
+      <div class="f-proj"><span class="own-tag dev">desarrollo</span><b>Análisis de datos para empresas agroalimentarias</b><p>Análisis descriptivos de problemas concretos de empresas agroalimentarias de Navarra.</p><div class="tags"><span class="tag c">agroalimentario</span><span class="tag d">análisis descriptivo</span></div></div>
+      <div class="f-proj"><span class="own-tag dev">desarrollo</span><b>Automatización de procesos e informes</b><p>Aplicaciones y sistemas de optimización para distintos problemas, y automatización de la generación de informes, con una mejora notable de la eficiencia del equipo y de los clientes.</p><div class="tags"><span class="tag d">automatización</span><span class="tag d">informes</span></div></div>
+    </div>
+  </section>
+  <div class="f-cols">
+    <section class="f-sec"><h3>Técnicas</h3><div class="tags"><span class="tag d">k-NN</span><span class="tag d">árboles de decisión</span><span class="tag d">Random Forest</span><span class="tag d">XGBoost</span><span class="tag d">K-means</span><span class="tag d">PCA</span><span class="tag d">DBSCAN</span></div></section>
+    <section class="f-sec"><h3>Herramientas</h3><div class="tags"><span class="tag">Python</span><span class="tag">R</span><span class="tag">Knime</span><span class="tag">PowerApps</span><span class="tag">Excel (macros)</span><span class="tag">Oracle</span><span class="tag">MongoDB</span></div></section>
+  </div>
+  <section class="f-sec"><h3>Enlaces</h3>
+    <a class="btn" href="https://iafood.es/" target="_blank" rel="noopener">Web de IAFOOD</a>
+  </section>
+  <p class="f-own">// propiedad real: cada proyecto indica si lo desarrollé o participé</p>
+</article>
+
+<article class="ficha" id="ficha-hispatec" data-title="Hispatec" data-th="campo datos ia">
+  <div class="f-k">Experiencia · sep 2022 – dic 2025 · remoto</div>
+  <h2>Hispatec</h2>
+  <div class="f-sub">Senior Data Scientist · departamento de Data Analytics · Agrointeligencia</div>
+  <a class="f-link" href="#ficha-hispatec">enlace directo · #ficha-hispatec</a>
+  <section class="f-sec"><h3>Contexto</h3>
+    <p>En el departamento de Data Analytics diseñé y desarrollé soluciones de IA para la agroindustria de principio a fin, desde estudiar si un proyecto era viable hasta dejarlo en producción, con foco en forecasting, optimización y calidad de datos.</p>
+    <p>Además hacía análisis descriptivos, para encontrar qué variables influyen en un resultado y cómo interactúan entre sí, y preparaba informes visuales para presentar los resultados a públicos distintos. También participé en iniciativas de espacios de datos.</p>
+  </section>
+  <section class="f-sec"><h3>Proyectos</h3>
+    <div class="f-projs">
+      <div class="f-proj"><span class="own-tag dev">desarrollo</span><b>Predicción de cosecha de frambuesa</b><p>Modelo predictivo que estima la cosecha de las tres semanas siguientes.</p><div class="tags"><span class="tag c">frambuesa</span><span class="tag d">series temporales</span><span class="tag d">horizonte de 3 semanas</span></div></div>
+      <div class="f-proj"><span class="own-tag mant">mantenimiento</span><b>Predicción mensual de cosecha en arándano y pimiento</b><p>Mantenimiento de un modelo existente que estima la cosecha mes a mes.</p><div class="tags"><span class="tag c">arándano · pimiento</span><span class="tag d">forecasting</span></div></div>
+      <div class="f-proj"><span class="own-tag dev">desarrollo</span><b>Recomendación de abonado en cultivos perennes</b><p>Modelo que estima las cantidades de abonado para aguacate y mango a partir del histórico de abonados y de cultivos similares.</p><div class="tags"><span class="tag c">aguacate · mango</span><span class="tag d">k-NN</span></div></div>
+      <div class="f-proj"><span class="own-tag mant">optimización y mejoras</span><b>Optimización del reparto</b><p>Optimización de un sistema que automatiza la carga de camiones según las reglas de cada proveedor, la fecha de cosecha y la distancia, entre otros criterios, así como despliegue de nuevas versiones con mejoras y resolución de fallos.</p><div class="tags"><span class="tag c">logística</span><span class="tag d">optimización</span></div></div>
+      <div class="f-proj"><span class="own-tag dev">desarrollo</span><b>Motor AutoML propio</b><p>Desarrollado desde cero: automatiza el modelado y refuerza la calidad de los datos.</p><div class="tags"><span class="tag a">AutoML</span><span class="tag d">calidad del dato</span></div></div>
+      <div class="f-proj"><span class="own-tag dev">desarrollo</span><b>Paneles de Power BI</b><p>Paneles interactivos para que los equipos tomaran decisiones con los datos a la vista.</p><div class="tags"><span class="tag d">Power BI</span><span class="tag d">visualización</span></div></div>
+    </div>
+  </section>
+  <section class="f-sec"><h3>Resultados</h3><ul class="f-list">
+    <li>Proyectos llevados desde el estudio de viabilidad hasta producción.</li>
+    <li>Automatización de tareas y procesos junto a equipos multidisciplinares, con una mejora notable de la eficiencia.</li>
+  </ul></section>
+  <div class="f-cols">
+    <section class="f-sec"><h3>Técnicas</h3><div class="tags"><span class="tag d">Random Forest</span><span class="tag d">XGBoost</span><span class="tag d">ELM</span><span class="tag d">SVM</span><span class="tag d">k-NN</span><span class="tag d">ARIMA</span><span class="tag d">SARIMA</span><span class="tag d">ensembles</span></div></section>
+    <section class="f-sec"><h3>Herramientas</h3><div class="tags"><span class="tag">Python</span><span class="tag">R</span><span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">Postman</span></div></section>
+  </div>
+  <p class="f-own">// propiedad real: cada proyecto indica si lo desarrollé, lo mantuve o lo mejoré</p>
+</article>
+
+<article class="ficha" id="ficha-eci" data-title="El Corte Inglés" data-th="datos ia">
+  <div class="f-k">Experiencia · ene 2026 – hoy · remoto</div>
+  <h2>El Corte Inglés</h2>
+  <div class="f-sub">Senior Data Scientist (AI/ML Engineer) · vía ALTEN · departamento de IA</div>
+  <a class="f-link" href="#ficha-eci">enlace directo · #ficha-eci</a>
+  <section class="f-sec"><h3>Contexto</h3>
+    <p>En el equipo de IA del e-commerce, con millones de clientes, mantengo y evoluciono los motores de recomendación del proyecto XSell y desarrollo nuevos servicios de recomendación.</p>
+  </section>
+  <section class="f-sec"><h3>Proyectos</h3>
+    <div class="f-projs">
+      <div class="f-proj"><span class="own-tag mant">evolución</span><b>«Productos similares» y «Completa Tu Look»</b><p>Motores de recomendación con embeddings sobre MongoDB, LLMs de OpenAI y visión por computador para el emparejado de prendas: mejoras, corrección de bugs y nuevas categorías.</p><div class="tags"><span class="tag a">embeddings</span><span class="tag a">LLMs</span><span class="tag a">visión por computador</span></div></div>
+      <div class="f-proj"><span class="own-tag dev">desarrollo</span><b>Nuevos servicios de recomendación</b><p>Por ejemplo, la recomendación en cesta, que amplía el cross-sell.</p><div class="tags"><span class="tag a">recomendación</span><span class="tag d">cross-sell</span></div></div>
+      <div class="f-proj"><span class="own-tag mant">mantenimiento y ampliación</span><b>Servicios de inferencia e ingesta en tiempo real</b><p>Mantenimiento y ampliación de los servicios de inferencia e ingesta de datos, en Python con FastAPI.</p><div class="tags"><span class="tag d">FastAPI</span><span class="tag d">tiempo real</span></div></div>
+      <div class="f-proj"><b>Paso a producción</b><p>Promoción de cambios a producción (UAT/NFT/PRO sobre Kubernetes) con CI/CD, pytest y Locust: ajuste, monitorización y resolución de incidencias.</p><div class="tags"><span class="tag d">Kubernetes</span><span class="tag d">CI/CD</span><span class="tag d">pruebas de carga</span></div></div>
+    </div>
+  </section>
+  <div class="f-cols">
+    <section class="f-sec"><h3>Técnicas</h3><div class="tags"><span class="tag a">embeddings</span><span class="tag a">LLMs</span><span class="tag a">visión por computador</span><span class="tag a">sistemas de recomendación</span><span class="tag d">pruebas de carga</span></div></section>
+    <section class="f-sec"><h3>Herramientas</h3><div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">MongoDB</span><span class="tag">OpenAI</span><span class="tag">Kubernetes</span><span class="tag">GitHub Actions</span><span class="tag">pytest</span><span class="tag">Locust</span></div></section>
+  </div>
+  <p class="f-own">// propiedad real: mantengo y evoluciono lo existente · desarrollo servicios nuevos</p>
+</article>
+
+<article class="ficha" id="ficha-formacion" data-title="Formación complementaria" data-th="campo datos"></article>
+
+</div>
+
+<script>
+const AGENT_TOGGLE = false;  // interruptor del agente: apagado; se enciende solo en procesos de selección
+const qs=new URLSearchParams(location.search);
+const AGENT_ON = AGENT_TOGGLE && qs.get('agente')!=='off';
+if(!AGENT_ON){document.getElementById('pill').remove();document.getElementById('agent').remove()}
+if(qs.get('captura')) document.documentElement.classList.add('cap');
+
+const PROJS=[
+  {k:"visión · campo",t:"leaf-labeler",p:"Etiquetado con SAM2: segmenta lesiones en hojas en GPU y genera ground truth (máscaras y CSV de conteo y área).",m:"SAM2 · CUDA",c:"c"},
+  {k:"AI-native",t:"App web full-stack",p:"Construida y desplegada orquestando IA de principio a fin.",m:"hasta 1.500 usuarios",c:"a"},
+  {u:"https://github.com/juanmartinsantos/et0stacking",k:"investigación · público",t:"et0stacking",p:"Código del stacking-ensemble para predecir evapotranspiración.",m:"20 datasets · 77 estaciones",c:"d"},
+  {u:"https://github.com/juanmartinsantos/multi-horizon-framework",k:"investigación · público",t:"multi-horizon-framework",p:"Framework de ensembles para forecasting multi-horizonte de temperatura del aire.",m:"ensembles · forecasting",c:"d"},
+  {k:"agentes",t:"coyote-bot",p:"Bot multi-agente de WhatsApp para restauración, con MongoDB Atlas.",m:"multi-agente · MongoDB",c:"a"},
+  {u:"https://github.com/juanmartinsantos/mcp-server-tuya",k:"agentes · público",t:"mcp-server-tuya",p:"Servidor MCP (Model Context Protocol) para domótica, compatible con Claude, ChatGPT y Cursor.",m:"MCP · Python",c:"a"}
+];
+const COLS={c:"var(--campo)",d:"var(--datos)",a:"var(--ia)"};
+document.getElementById('builds').innerHTML=PROJS.map(p=>`<article class="build"><span class="k">${p.k}</span><b>${p.t}</b><p>${p.p}</p><div class="m" style="color:${COLS[p.c]}">${p.m}</div>${p.u?`<a class="repo" href="${p.u}" target="_blank" rel="noopener">ver el código en GitHub ↗</a>`:''}</article>`).join('');
+/* formación continua: una sola fuente para la línea de la historia y para la ficha (temarios del sitio antiguo) */
+const GRUPOS={est:"Estadística y diseño de experimentos",ml:"Ciencia de datos y machine learning",dl:"Deep learning",emp:"Big data e IA en la empresa",prot:"Gestión y protección de datos",otras:"Otras áreas: campo y energía"};
+const CURSOS=[
+  {n:1,t:"Estadística para investigadores: prácticas con R",y:2019,g:"est",tm:["Estadística descriptiva","Coeficiente de correlación de Pearson y modelos de regresión","Test chi-cuadrado","Test t de Student y tests no paramétricos"]},
+  {n:0,t:"Introducción a la inferencia estadística con R",y:2020,g:"est",tm:["Introducción a la inferencia; intervalos de confianza","Contrastes paramétricos para dos poblaciones (con R)","Contrastes no paramétricos para dos poblaciones (con R)","Determinación del tamaño muestral"]},
+  {n:0,t:"Introducción al diseño de experimentos con R",y:2020,g:"est",tm:["Comparación de varios grupos: diseño completamente al azar y análisis de la varianza de una vía","Diseño en bloques al azar y análisis de la varianza de dos vías","Diseños factoriales e interacción","Determinación del tamaño muestral"]},
+  {n:2,t:"Ciencia de los datos. Analítica de datos descriptiva y predictiva",y:2019,g:"ml",tm:["Introducción a la ciencia de los datos","Tecnologías","Analítica de datos","Analítica descriptiva","Analítica predictiva","Herramientas y aplicaciones"]},
+  {n:2,t:"Introducción a la inteligencia artificial: aprendizaje automático y redes neuronales",y:2019,g:"ml",tm:["Introducción a la IA","Técnicas y herramientas del aprendizaje automático","Fundamentos de redes neuronales","Aplicaciones de redes neuronales"]},
+  {n:3,t:"Python: machine learning, optimización y aplicaciones",y:2020,g:"ml",tm:["Conocimientos básicos de Python y sus módulos principales","Machine learning en Python: regresión, clasificadores y clustering","Técnicas de optimización en Python","Deep learning con TensorFlow y Keras","Aplicaciones"]},
+  {n:4,t:"Formación Avanzada en Ciencia de Datos",y:2025,g:"ml",tm:["Introducción a la ciencia de datos. Herramientas básicas","Análisis exploratorio de datos","Fundamentos de machine learning","Técnicas avanzadas de machine learning","Deep learning","Análisis de series temporales","Text mining, redes sociales y sistemas de recomendación"]},
+  {n:2,t:"Redes neuronales artificiales: modelos actuales y el paradigma del deep learning",y:2021,g:"dl",tm:["Transfer learning con deep convolutional neural networks","Segmentación semántica con U-Net","Generación de muestras sintéticas con generative adversarial networks","Modelos secuenciales y recurrentes para predicción en series temporales","Procesamiento de lenguaje natural con Transformers"]},
+  {n:4,t:"Deep Learning con Python",y:2023,g:"dl",tm:["Python: manipulación y visualización de datos y modelos de aplicación","Deep learning: redes densas, redes convolucionales, autoencoders y redes recurrentes"]},
+  {n:2,t:"Arquitectura Big Data",y:2022,g:"emp",tm:["Batch processing","Streaming processing","Sistemas NoSQL","Interactive query","Sistemas de computación híbridos","Cloud computing","Administración de sistemas big data","Visualización de datos"]},
+  {n:2,t:"Inteligencia artificial aplicada a la empresa",y:2022,g:"emp",tm:["Introducción a la IA: definición e historia, ramas y algoritmos, machine y deep learning, big data como cambio en la IA","Algoritmos de IA: modelos supervisados y no supervisados, aprendizaje por refuerzo, modelos profundos y ejemplos con Weka y Orange","Aplicaciones en la empresa: people analytics; predicción de stocks, demandas y comportamientos; segmentación y tendencias; fidelización de clientes con aprendizaje por refuerzo; recomendadores web y mejora de procesos"]},
+  {n:2,t:"Análisis de datos con inteligencia artificial en el campo de ciencias, ingeniería y arquitectura",y:2022,g:"emp",tm:["Introducción a la inteligencia artificial","Fundamentos de las redes neuronales artificiales: del perceptrón a los modelos avanzados","Optimización de procesos","Problemas de clasificación","Mejora de la calidad del producto","Mantenimiento predictivo","Casos de actualidad en ciencias, ingeniería y arquitectura"]},
+  {n:2,t:"Gestión de la información: recogida, tratamiento y almacenamiento seguro de datos",y:2019,g:"prot",tm:["Bases de datos","Operaciones en las bases de datos","Creación de formularios para recogida de datos","Diseño de informes para presentar los datos","Tratamiento de los datos","Almacenamiento de forma segura"]},
+  {n:0,t:"Técnicas de protección de datos personales en análisis de datos",y:2020,g:"prot",tm:["Introducción a las regulaciones de protección de datos","Protección de datos, analítica de datos y big data","Protección de datos en investigación","Guía de técnicas y ejemplos prácticos"]},
+  {t:"Diseño y mantenimiento de instalaciones de energía solar fotovoltaica",y:2020,g:"otras",tm:["Introducción","Radiación solar","El módulo fotovoltaico: el generador fotovoltaico","Puesta en marcha de un sistema fotovoltaico","Sistemas fotovoltaicos conectados a red","Diseño de sistemas fotovoltaicos conectados a red","Mantenimiento","Costos"],rel:{txt:"la previsión de producción fotovoltaica en la Universidad de Salamanca",f:"ficha-usal"}},
+  {t:"Congreso Venezolano de Fitopatología",g:"otras"},
+  {t:"Manejo integrado de plagas (<i>Phytophthora infestans</i>)",g:"otras"},
+  {t:"Taller sobre el cambio climático",g:"otras"},
+  {t:"Fertilización integrada en suelos",g:"otras"},
+  {t:"Certificación en manejo de cultivos anuales (ciclo corto)",g:"otras"},
+  {t:"Certificación en manejo de cultivos perennes (ciclo largo)",g:"otras"}
+];
+const DATOS=CURSOS.filter(c=>c.g!=='otras'),OTRAS=CURSOS.filter(c=>c.g==='otras');
+const plain=s=>s.replace(/<[^>]+>/g,'');
+/* tono de cada curso según sus horas de formación (más oscuro = más horas), sin mostrar las cifras.
+   Rampa de un solo tono validada: luminosidad monótona, pasos distinguibles y ≥3:1 sobre el fondo */
+const TONOS=['#ffd1a0','#f9aa60','#d78a3f','#b67331','#915b25'];
+{ // línea de la historia: un punto por curso y año
+  const yrs=[...new Set(DATOS.map(c=>c.y))].sort(),strip=document.getElementById('strip');
+  strip.innerHTML=`<div class="yrs">${yrs.map(y=>`<div class="yr"><span>${y}</span>${DATOS.filter(c=>c.y===y).map(c=>`<i data-c="${CURSOS.indexOf(c)}" style="background:${TONOS[c.n]}"></i>`).join('')}</div>`).join('')}</div>
+    <div class="hleg"><span>menos horas</span>${TONOS.map(c=>`<i style="background:${c}"></i>`).join('')}<span>más horas</span></div>
+    <div class="cap"><span>${DATOS.length} cursos de datos e IA</span><span class="c">+ ${OTRAS.length} de campo y energía</span><span class="go">ver todos los temarios →</span></div>
+    <div class="tip"><b></b><span></span></div>`;
+  const tip=strip.querySelector('.tip');
+  strip.addEventListener('pointermove',e=>{const d=e.target.closest('i[data-c]');if(!d){tip.classList.remove('on');return}
+    const c=CURSOS[d.dataset.c],r=d.getBoundingClientRect(),b=strip.getBoundingClientRect();
+    tip.querySelector('b').textContent=plain(c.t);tip.querySelector('span').textContent=String(c.y);
+    const w=tip.offsetWidth,x=Math.max(w/2,Math.min(b.width-w/2,r.left+r.width/2-b.left));
+    tip.style.left=x+'px';tip.style.top=(r.top-b.top-8)+'px';tip.classList.add('on')});
+  strip.addEventListener('pointerleave',()=>tip.classList.remove('on'));
+}
+{ // ficha de formación continua
+  const course=c=>c.tm?`<details class="course"><summary><span>${c.t}</span><span class="y">${c.y||''}</span></summary><ul>${c.tm.map(x=>`<li>${x}</li>`).join('')}</ul>${c.rel?`<p class="rel">relacionado con <a href="#${c.rel.f}">${c.rel.txt}</a></p>`:''}</details>`
+                     :`<div class="course-row"><span>${c.t}</span><span class="y">${c.y||''}</span></div>`;
+  const groups=Object.entries(GRUPOS).map(([k,name])=>{const cs=CURSOS.filter(c=>c.g===k);
+    return `<div class="f-group" id="g-${k}"><h4>${name}<span>${cs.length} ${cs.length===1?'curso':'cursos'}</span></h4>${cs.map(course).join('')}</div>`}).join('');
+  document.getElementById('ficha-formacion').innerHTML=`
+    <div class="f-k">Formación · 2019 – 2025</div>
+    <h2>Formación complementaria</h2>
+    <div class="f-sub">${DATOS.length} cursos de datos e IA · ${OTRAS.length} de campo y energía</div>
+    <a class="f-link" href="#ficha-formacion">enlace directo · #ficha-formacion</a>
+    <section class="f-sec"><h3>Cursos</h3>
+      <p>Mientras trabajaba, nunca dejé de aprender. Estos son los cursos complementarios, agrupados por tema y con su temario completo.</p>
+      <div class="f-jump" style="margin-top:16px">${Object.entries(GRUPOS).map(([k,n])=>`<button type="button" data-jump="g-${k}">${n}</button>`).join('')}</div>
+      ${groups}
+    </section>`;
+}
+
+/* hilos: se encienden según la escena visible */
+const nodes=[...document.querySelectorAll('[data-th]')].filter(n=>n!==document.body&&!n.classList.contains('ficha'));
+function onScroll(){
+  let cur=null;for(const n of nodes){const r=n.getBoundingClientRect();if(r.top<innerHeight*.55&&r.bottom>innerHeight*.3)cur=n}
+  if(cur)document.body.dataset.th=cur.dataset.th;
+  document.querySelectorAll('.reveal').forEach(e=>{if(e.getBoundingClientRect().top<innerHeight*.88)e.classList.add('on')});
+  const b=document.getElementById('braid');if(b.getBoundingClientRect().top<innerHeight*.8)b.classList.add('on');
+  const f=document.getElementById('fusion').getBoundingClientRect().top;
+  if(AGENT_ON)document.getElementById('pill').classList.toggle('on',f<innerHeight*.5);
+}
+addEventListener('scroll',onScroll);onScroll();
+
+/* fichas: panel lateral con enlace directo (#ficha-…); «Atrás» del navegador o Esc la cierran */
+const drawer=document.getElementById('drawer'),dpanel=drawer.querySelector('.drawer-panel'),dbody=document.getElementById('drawer-body'),dnav=document.getElementById('drawer-nav'),store=document.getElementById('fichas');
+const ORDER=[...store.querySelectorAll('.ficha')].map(a=>a.id);
+let openId=null,pushed=false,lastFocus=null;
+function openFicha(id,push=true){
+  const art=document.getElementById(id);if(!art||!ORDER.includes(id)||id===openId)return;
+  const prev=dbody.firstElementChild;if(prev)store.appendChild(prev);   // la ficha anterior vuelve a su sitio
+  dbody.appendChild(art);
+  const i=ORDER.indexOf(id),T=x=>document.getElementById(x).dataset.title,p=ORDER[i-1],n=ORDER[i+1];
+  dnav.innerHTML=(p?`<a href="#${p}">← anterior<b>${T(p)}</b></a>`:'')+(n?`<a class="nx" href="#${n}">siguiente →<b>${T(n)}</b></a>`:'');
+  document.getElementById('drawer-pos').textContent=`ficha ${i+1} de ${ORDER.length}`;
+  dpanel.setAttribute('aria-label',`Ficha: ${art.dataset.title}`);
+  document.body.dataset.th=art.dataset.th;
+  if(push){if(openId)history.replaceState(null,'','#'+id);else{history.pushState(null,'','#'+id);pushed=true}}
+  if(!openId){lastFocus=document.activeElement;document.documentElement.classList.add('locked');drawer.classList.add('open');drawer.setAttribute('aria-hidden','false')}
+  openId=id;dpanel.scrollTop=0;dpanel.focus({preventScroll:true});
+}
+function closeFicha(fromHistory=false){
+  if(!openId)return;
+  if(!fromHistory){if(pushed){history.back();return}history.replaceState(null,'',location.pathname+location.search)}
+  pushed=false;openId=null;
+  drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true');document.documentElement.classList.remove('locked');
+  if(lastFocus&&lastFocus.focus)lastFocus.focus({preventScroll:true});
+  onScroll();
+}
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a[href^="#ficha-"]');
+  if(a){e.preventDefault();openFicha(a.getAttribute('href').slice(1));return}
+  if(e.target.closest('[data-close]')){closeFicha();return}
+  const j=e.target.closest('[data-jump]');if(j)document.getElementById(j.dataset.jump).scrollIntoView({behavior:'smooth',block:'start'});
+});
+document.addEventListener('keydown',e=>{
+  if(!openId)return;
+  if(e.key==='Escape'){e.preventDefault();closeFicha();return}
+  if(e.key==='Tab'){  // el foco no se escapa del panel
+    const f=[...dpanel.querySelectorAll('a[href],button,summary')].filter(x=>x.offsetParent!==null);if(!f.length)return;
+    const first=f[0],last=f[f.length-1],el=document.activeElement;
+    if(e.shiftKey&&(el===first||el===dpanel)){e.preventDefault();last.focus()}else if(!e.shiftKey&&el===last){e.preventDefault();first.focus()}
+  }
+});
+addEventListener('popstate',()=>{const h=location.hash.slice(1);if(ORDER.includes(h))openFicha(h,false);else closeFicha(true)});
+{ // enlace directo al cargar (p. ej. desde el PDF): la historia se coloca en su escena y se abre la ficha
+  const h=location.hash.slice(1);
+  if(ORDER.includes(h)){const t=document.querySelector(`.scene a[href="#${h}"]`);if(t)t.closest('.scene').scrollIntoView({block:'center',behavior:'instant'});onScroll();openFicha(h,false);if(t)lastFocus=t}
+}
+
+/* agente (simulado en el borrador) */
+if(AGENT_ON){
+  const pill=document.getElementById('pill'),ag=document.getElementById('agent'),msgs=document.getElementById('msgs'),sugg=document.getElementById('sugg');
+  pill.onclick=()=>ag.classList.toggle('open');document.getElementById('ax').onclick=()=>ag.classList.remove('open');
+  const QA=[
+    {q:"¿Ha llevado modelos a producción?",a:"Sí. En Hispatec, de la viabilidad a producción; en El Corte Inglés promociona cambios a producción (UAT/NFT/PRO) con CI/CD, pytest y Locust.",c:["Experiencia · Hispatec","Experiencia · El Corte Inglés"]},
+    {q:"¿Qué relación tiene con el agro?",a:"Es ingeniero agrónomo, trabajó en el sector agro en Venezuela, su tesis trata de agricultura inteligente y lleva más de 4 años en IA agroalimentaria.",c:["Experiencia","Formación · PhD"]},
+    {q:"¿Trabaja con LLMs y agentes?",a:"Sí: LLMs y embeddings en producción en El Corte Inglés, y en proyectos propios un servidor MCP y un bot multi-agente.",c:["Experiencia · El Corte Inglés","Proyectos propios"]}
+  ];
+  const say=async(h,w='bot')=>{const m=document.createElement('div');m.className='m '+w;msgs.appendChild(m);if(w==='me'){m.textContent=h}else{for(const x of h.split(' ')){m.innerHTML+=(m.innerHTML?' ':'')+x;msgs.scrollTop=1e9;await new Promise(r=>setTimeout(r,20))}}msgs.scrollTop=1e9;return m};
+  say('Hola. Conozco la trayectoria de Juan y solo respondo con lo que hay en esta web, citando la sección.');
+  sugg.innerHTML=QA.map((x,i)=>`<button data-i="${i}">${x.q}</button>`).join('');
+  sugg.onclick=async e=>{const i=e.target.dataset.i;if(i===undefined)return;const x=QA[i];await say(x.q,'me');const m=await say(x.a);m.innerHTML+='<br>'+x.c.map(c=>`<span class="cite">${c}</span>`).join('')};
+  document.getElementById('af').onsubmit=async e=>{e.preventDefault();const v=document.getElementById('ain').value.trim();if(!v)return;document.getElementById('ain').value='';await say(v,'me');await say('En este borrador solo respondo a las preguntas sugeridas.')};
+}
+
+/* ===================== ANIMACIÓN DE PARTÍCULAS =====================
+   Una forma por sección (atributo data-escena) y, al llegar al cierre, el árbol de la trayectoria.
+   Escritorio: columna fija a la derecha. Pantallas estrechas: de fondo y tenue. */
+(()=>{
+const cv=document.getElementById('cv');if(!cv)return;
+const cx=cv.getContext('2d');
+const wide=matchMedia('(min-width:1024px)').matches,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const N=wide?2200:1100,DPR=Math.min(devicePixelRatio||1,2),FORCE=qs.get('escena');
+let W=0,H=0;
+const rnd=(a,b)=>a+Math.random()*(b-a),gauss=()=>{let u=0,v=0;while(!u)u=Math.random();while(!v)v=Math.random();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v)};
+const clamp=v=>Math.max(0,Math.min(1,v)),ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const C={campo:[143,207,106],campo2:[95,160,70],datos:[242,166,90],datos2:[214,128,60],ia:[185,162,255],ia2:[140,115,230],dim:[150,140,120],tierra:[150,118,84],ink:[239,233,220]};
+const mix=(a,b,t)=>a.map((v,i)=>v+(b[i]-v)*t);
+const P=(x,y,c,s)=>({x,y,c,s:s||1});
+
+/* ---- 0 · planta (Venezuela) ---- */
+function sPlant(){const o=[],cm=W*.5,base=H*.84,top=H*.18,stem=t=>[cm+Math.sin(t*3.1)*W*.025,base-(base-top)*t];
+  for(let i=0;i<N*.14;i++){const t=Math.random(),[x,y]=stem(t);o.push(P(x+rnd(-2,2),y,mix(C.campo2,C.campo,t),1.1))}
+  for(let i=0;i<N*.62;i++){const k=Math.floor(Math.random()*9),t=.2+k*.074,[sx,sy]=stem(t),side=k%2?1:-1,len=W*(.13+.05*Math.sin(k*1.7)),ang=-Math.PI/2+side*(1.05-k*.035),u=Math.random(),half=Math.sin(Math.PI*Math.pow(u,.8))*len*.19,r=Math.random();
+    let ly=r<.62?(Math.random()<.5?1:-1)*half:r<.85?rnd(-1,1):rnd(-half,half)*.8;const lx=u*len,curl=-u*u*len*.22,ca=Math.cos(ang),sa=Math.sin(ang);
+    o.push(P(sx+lx*ca-(ly+curl*side)*sa,sy+lx*sa+(ly+curl*side)*ca,mix(C.campo2,C.campo,r<.62?.9:.4),r<.85?1.15:.8))}
+  for(let i=0;i<N*.08;i++)o.push(P(cm+rnd(-W*.3,W*.3)*Math.sqrt(Math.random()),base+rnd(0,4)+Math.random()*Math.random()*12,C.tierra,1.1));
+  while(o.length<N){const a=rnd(0,Math.PI*2),r=Math.sqrt(Math.random())*W*.03,[x,y]=stem(1);o.push(P(x+Math.cos(a)*r,y-Math.abs(Math.sin(a))*r*2.2,C.campo,1.2))}
+  return o}
+/* ---- 1 · gráfico ET0 (Universidad de Salamanca) ---- */
+const CH={x0:.12,x1:.9,y0:.78,y1:.2};
+function sChart(){const o=[],X=u=>W*(CH.x0+(CH.x1-CH.x0)*u),Y=v=>H*(CH.y0-(CH.y0-CH.y1)*v),f=u=>.15+.75*Math.pow(Math.sin(Math.PI*u),1.6);
+  for(let i=0;i<N*.12;i++)o.push(i%2?P(X(Math.random()),H*CH.y0,C.dim,.9):P(W*CH.x0,Y(Math.random()*1.05),C.dim,.9));
+  for(let i=0;i<N*.55;i++){const u=Math.random();o.push(P(X(u),Y(f(u)+rnd(-.09,.09)*(1+Math.random())),mix(C.campo,C.datos,.55+Math.random()*.45),1.3))}
+  while(o.length<N){const u=Math.random();o.push(P(X(u),Y(f(u))+rnd(-1.2,1.2),C.datos,1.1))}return o}
+/* ---- 2 · segmentos de scoring (Santander) ---- */
+const SEG=[{x:.3,y:.32,n:'riesgo',c:C.datos},{x:.7,y:.3,n:'propensión',c:[250,200,120]},{x:.28,y:.7,n:'fraude',c:C.datos2},{x:.7,y:.72,n:'churn',c:[230,150,110]}];
+function sSeg(){const o=[];for(let i=0;i<N;i++){const s=SEG[i%4],r=Math.min(W,H)*.085;o.push(P(W*s.x+gauss()*r,H*s.y+gauss()*r*.8,s.c,i%9?1.1:1.6))}return o}
+/* ---- 3 · pipeline que fluye (Helphone) ---- */
+const NODES=[.14,.38,.62,.86],NL=['datos de campo','preprocesado','modelo','agroempresa'];
+function sPipe(T){const o=[],y=H*.5,R=Math.min(W,H)*.045,nNode=Math.floor(N*.34);
+  for(let i=0;i<nNode;i++){const k=i%4,a=i*2.399,r=R*(.85+Math.random()*.15);o.push(P(W*NODES[k]+Math.cos(a)*r,y+Math.sin(a)*r,mix(C.campo,C.datos,k/3),1.2))}
+  let i=0;while(o.length<N){const seed=i++*0.6180339887%1,lane=(i%5-2)*R*.18,u=(seed+T*.06)%1,x=W*(NODES[0]+(NODES[3]-NODES[0])*u),wob=Math.sin(u*40+i)*1.5;o.push(P(x,y+lane+wob,mix(C.campo,C.datos,u),.9+(i%7==0?.8:0)))}
+  return o}
+/* ---- 4 · surcos + previsión de cosecha (Hispatec) ---- */
+function sRows(){const o=[],rows=9,vx=W*.5,vy=H*.42;
+  for(let i=0;i<N*.62;i++){const r=Math.floor(Math.random()*rows),u=Math.pow(Math.random(),.8),bx=W*(.04+.92*r/(rows-1)),by=H*.95;o.push(P(vx+(bx-vx)*u+rnd(-1,1),vy+(by-vy)*u,mix(C.campo2,C.campo,u),.6+u*1.1))}
+  const x0=W*.1,x1=W*.92,today=.62,g=u=>H*.33-Math.sin(u*Math.PI*2.2)*H*.035-u*H*.12;
+  while(o.length<N){const u=Math.random(),x=x0+(x1-x0)*u;if(u<today)o.push(P(x,g(u)+rnd(-1.5,1.5),C.datos,1.2));else{const band=(u-today)*H*.18*(Math.random()-.5);o.push(P(x,g(u)+band*(Math.random()<.5?1:0),C.ia,Math.floor(u*60)%2?1.2:.7))}}
+  return o}
+/* ---- 5 · embeddings girando en 3D (El Corte Inglés) ---- */
+const EMB=Array.from({length:2400},(_,i)=>{const k=i%5,cen=[[.6,.2,0],[-.5,.4,.3],[0,-.55,-.3],[-.3,-.2,.6],[.4,.5,-.5]][k];return{p:[cen[0]+gauss()*.16,cen[1]+gauss()*.16,cen[2]+gauss()*.16],k}});
+const QUERY=7;
+const NB=(()=>{const q=EMB[QUERY].p;return EMB.slice(0,N).map((e,i)=>[i,Math.hypot(e.p[0]-q[0],e.p[1]-q[1],e.p[2]-q[2])]).filter(x=>x[0]!==QUERY).sort((a,b)=>a[1]-b[1]).slice(0,6).map(x=>x[0])})();
+function proj(p,T){const a=T*.12,b=.35,x=p[0]*Math.cos(a)-p[2]*Math.sin(a),z=p[0]*Math.sin(a)+p[2]*Math.cos(a),y=p[1]*Math.cos(b)-z*Math.sin(b),z2=p[1]*Math.sin(b)+z*Math.cos(b),s=1/(1.9-z2*.6);return[W*.5+x*s*Math.min(W,H)*.6,H*.5+y*s*Math.min(W,H)*.6,s]}
+function sEmb(T){const o=[];for(let i=0;i<N;i++){const e=EMB[i],[x,y,s]=proj(e.p,T);const near=NB.includes(i)||i===QUERY;o.push(P(x,y,i===QUERY?C.ink:near?C.datos:mix(C.ia2,C.ia,e.k/4),i===QUERY?3:near?2:.6+s*.6))}return o}
+/* ---- 6 · raíces (formación) ---- */
+function sRoots(){const o=[],cm=W*.5,g=H*.36;
+  for(let i=0;i<N*.07;i++)o.push(P(cm+rnd(-W*.36,W*.36),g+rnd(-1,1),C.tierra,1));
+  for(let i=0;i<N*.13;i++){const t=Math.random();o.push(P(cm+Math.sin(t*6)*3,g-t*H*.16,C.campo,1.1))}
+  for(let i=0;i<N*.06;i++){const side=i%2?1:-1,u=Math.random();o.push(P(cm+side*u*W*.07,g-H*.12-Math.sin(u*Math.PI)*H*.035,C.campo,1))}
+  const branches=[];(function grow(x,y,ang,len,d){if(d>6||len<6)return;const x2=x+Math.cos(ang)*len,y2=y+Math.sin(ang)*len;branches.push([x,y,x2,y2,d]);grow(x2,y2,ang+rnd(-.5,-.15),len*.72,d+1);grow(x2,y2,ang+rnd(.15,.5),len*.72,d+1)})(cm,g,Math.PI/2,H*.12,0);
+  while(o.length<N){const b=branches[Math.floor(Math.random()*branches.length)],u=Math.random();o.push(P(b[0]+(b[2]-b[0])*u,b[1]+(b[3]-b[1])*u,mix(C.datos,C.tierra,b[4]/6),Math.max(.6,1.6-b[4]*.15)))}
+  return o}
+/* ---- 7 · grafo de agentes (proyectos propios) ---- */
+const GN=[{x:.5,y:.5,n:'LLM',r:.07},{x:.22,y:.26,n:'mcp-server-tuya',r:.04},{x:.8,y:.28,n:'coyote-bot',r:.04},{x:.2,y:.76,n:'App web full-stack',r:.04},{x:.8,y:.75,n:'leaf-labeler',r:.04},{x:.5,y:.16,n:'herramientas',r:.025},{x:.5,y:.86,n:'datos',r:.025}];
+const GE=[[0,1],[0,2],[0,3],[0,4],[1,5],[2,5],[3,6],[4,6],[1,3],[2,4]];
+function sGraph(T){const o=[],m=Math.min(W,H);for(let i=0;i<N*.45;i++){const nd=GN[i%GN.length],a=i*2.399,r=m*nd.r*Math.sqrt(Math.random());o.push(P(W*nd.x+Math.cos(a)*r,H*nd.y+Math.sin(a)*r,i%GN.length?C.ia:C.ink,i%GN.length?1.1:1.4))}
+  let i=0;while(o.length<N){const e=GE[i%GE.length],a=GN[e[0]],b=GN[e[1]],u=((i*0.381966)%1+T*.08)%1;o.push(P(W*(a.x+(b.x-a.x)*u),H*(a.y+(b.y-a.y)*u),mix(C.ia2,C.datos,Math.random()<.15?1:0),.9));i++}
+  return o}
+/* ---- 8 · trenza de los tres hilos (habilidades) ---- */
+const braidY=(u,k,T)=>H*.5+Math.sin(u*Math.PI*4+k*2.094+T*.6)*H*.16*Math.max(0,1-u*1.15);
+function sBraid(T){const o=[],x0=W*.06,x1=W*.94,cols=[C.campo,C.datos,C.ia];for(let i=0;i<N;i++){const k=i%3,u=Math.random(),x=x0+(x1-x0)*u;o.push(P(x,braidY(u,k,T)+rnd(-1.5,1.5),u>.88?mix(cols[k],C.ink,(u-.88)*8):cols[k],u>.85?1.4:1.1))}return o}
+
+const SCENES=[{f:sPlant},{f:sChart},{f:sSeg},{f:sPipe,dyn:1},{f:sRows},{f:sEmb,dyn:1},{f:sRoots},{f:sGraph,dyn:1},{f:sBraid,dyn:1}];
+const LAST=SCENES.length-1;   // 8 = trenza; después viene el árbol
+// permutaciones y retardos por partícula: se calculan una sola vez (si cambian, las partículas saltan)
+const perm=SCENES.map(()=>{const a=[...Array(N).keys()];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a});
+const PT=Array.from({length:N},()=>({d:Math.random()*.35,b:rnd(-1,1)}));
+let cache=[];
+
+/* ===== final: el árbol de la trayectoria (crece por tiempo al llegar al cierre) ===== */
+function mulberry32(a){return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const ESTUDIOS=['Ingeniería Agronómica · 2013','Máster en Ingeniería · 2018','PhD en Ciencia de Datos · 2025'];
+const ETAPAS=[{n:'Univ. de Salamanca · 2017',th:['campo','datos']},{n:'Banco Santander · 2020',th:['datos']},{n:'Helphone · 2021',th:['campo','datos']},{n:'Hispatec · 2022',th:['campo','datos','ia']},{n:'El Corte Inglés · 2026',th:['datos','ia']}];
+let TG={},TP=[],TSEG=[],TLBL=[],TEND=12;
+function treeBuild(){
+  const rn=mulberry32(11),rr=(a,b)=>a+rn()*(b-a),m=Math.min(W,H),ground=H*.7,bx=W*.5;TG={bx,ground};
+  TSEG=[];TLBL=[];
+  let x=bx,y=ground;const trunkH=H*.34,tr=[];
+  for(let k=0;k<4;k++){const x2=bx+Math.sin((k+1)*1.3)*m*.012,y2=ground-trunkH*(k+1)/4;const s={x0:x,y0:y,x1:x2,y1:y2,w:1.7,t0:2.6+k*.32,t1:2.6+(k+1)*.32,kind:'trunk',col:[C.tierra,C.campo2]};TSEG.push(s);tr.push(s);x=x2;y=y2}
+  const onTrunk=u=>{const s=tr[Math.min(3,Math.floor(u*4))],f=u*4-Math.floor(u*4);return [s.x0+(s.x1-s.x0)*f,s.y0+(s.y1-s.y0)*f]};
+  const tips=[];
+  function grow(x0,y0,ang,len,depth,tA,et){
+    const x1=x0+Math.cos(ang)*len,y1=y0+Math.sin(ang)*len,dur=depth===0?.75:.5;TSEG.push({x0,y0,x1,y1,w:depth===0?1.35:1.05-depth*.1,t0:tA,t1:tA+dur,kind:'branch',col:[C.tierra,C.datos2]});
+    if(depth===0)TLBL.push({txt:ETAPAS[et].n,x:x1,y:y1,side:Math.cos(ang)>0?1:-1,t:tA+dur+.6});
+    if(depth<2){const sp=rr(.32,.55);grow(x1,y1,ang-sp,len*rr(.6,.72),depth+1,tA+dur,et);grow(x1,y1,ang+sp,len*rr(.6,.72),depth+1,tA+dur,et)}
+    else tips.push({x:x1,y:y1,len,t:tA+dur,et});
+  }
+  ETAPAS.forEach((e,k)=>{const side=k%2?1:-1,u=[.3,.46,.62,.78,1][k],[ax,ay]=onTrunk(Math.min(.999,u)),tilt=k===4?.15:(1.05-k*.13);
+    grow(ax,ay,-Math.PI/2+side*tilt,m*(.2-k*.014),0,3.4+k*.62,k)});
+  function root(x0,y0,ang,len,d,tA,lbl){
+    const x1=x0+Math.cos(ang)*len,y1=y0+Math.sin(ang)*len,dur=d===0?.6:.42;TSEG.push({x0,y0,x1,y1,w:d===0?1.25:1.05-d*.13,t0:tA,t1:tA+dur,kind:'root',col:[C.datos2,C.tierra]});
+    if(lbl)TLBL.push({txt:lbl,x:x1,y:y1,side:Math.cos(ang)>-.01?1:-1,t:tA+dur+.6});
+    if(d<3){const sp=rr(.25,.55);root(x1,y1,ang-sp,len*rr(.62,.74),d+1,tA+dur);root(x1,y1,ang+sp,len*rr(.62,.74),d+1,tA+dur)}
+  }
+  ESTUDIOS.forEach((e,k)=>root(bx,ground,Math.PI/2+[.8,0,-.8][k],H*.11,0,2.5+k*.45,e));
+  TP=[];let i=0;const add=o=>{o.i=i;o.u=(i*0.6180339887)%1;o.dep=.6+rn()*.9;o.ox=o.oy=0;TP.push(o);i++};
+  const nGround=Math.round(N*.04),nFol=Math.round(N*.46),nFlow=Math.round(N*.05),nWood=N-nGround-nFol-nFlow;
+  for(let k=0;k<nGround;k++)add({x:bx+rr(-W*.34,W*.34)*Math.sqrt(rn()),y:ground+rr(0,3)+rn()*rn()*8,c:C.tierra,s:1.05,ta:2.2+rn()*.5,from:null});
+  const wl=TSEG.map(s=>Math.hypot(s.x1-s.x0,s.y1-s.y0)*(s.kind==='trunk'?2.2:s.kind==='root'?.9:1.2)),tot=wl.reduce((a,b)=>a+b,0);
+  TSEG.forEach((s,j)=>{const n=Math.round(nWood*wl[j]/tot);for(let k=0;k<n;k++){const u=rn(),px=s.x0+(s.x1-s.x0)*u,py=s.y0+(s.y1-s.y0)*u,nx=-(s.y1-s.y0),ny=s.x1-s.x0,nl=Math.hypot(nx,ny)||1,o=(rn()-.5)*s.w*(s.kind==='trunk'?5:2.4);
+    add({x:px+nx/nl*o,y:py+ny/nl*o,c:mix(s.col[0],s.col[1],rn()*.8),s:s.kind==='trunk'?1.45:1.1,ta:s.t0+u*(s.t1-s.t0),from:[s.x0,s.y0]})}});
+  for(let k=0;k<nFol;k++){const t=tips[k%tips.length],a=rn()*Math.PI*2,rd=Math.sqrt(rn())*t.len*.95,th=ETAPAS[t.et].th,base=C[th[Math.floor(rn()*th.length)]];
+    add({x:t.x+Math.cos(a)*rd,y:t.y+Math.sin(a)*rd*.8,c:mix(base,C.campo2,rn()*.25),s:rr(.95,1.45),ta:t.t+rn()*.9,from:[t.x,t.y]})}
+  const iaTips=tips.filter(t=>ETAPAS[t.et].th.includes('ia'));
+  for(let k=0;k<nFlow;k++){const t=iaTips[k%iaTips.length],a=rn()*Math.PI*2,rd=Math.sqrt(rn())*t.len*.8;
+    add({x:t.x+Math.cos(a)*rd,y:t.y+Math.sin(a)*rd*.8,c:rn()<.5?C.ia:C.ink,s:1.7,ta:8.4+rn()*1.2,from:[t.x,t.y],flower:1})}
+  TEND=Math.max(...TP.map(p=>p.ta+.45),...TLBL.map(l=>l.t+.8));   // momento en que el árbol está completo
+}
+let mouse={x:-1e4,y:-1e4};
+function treeDraw(Tl,Tb,Ta){
+  cx.globalCompositeOperation='lighter';
+  const seed=[TG.bx,TG.ground-3],x0=W*.06,x1=W*.94;
+  for(const p of TP){
+    let x,y,col,a;
+    if(Tl<p.ta){
+      // fase 1: la trenza se recoge en una semilla en el suelo
+      const k=ease(clamp((Tl-p.dep)/.9)),bx=x0+(x1-x0)*p.u,by=braidY(p.u,p.i%3,Tb+Math.min(Tl,p.dep)),bc=[C.campo,C.datos,C.ia][p.i%3],j=(p.i%23-11)*.45;
+      x=bx+(seed[0]+j-bx)*k;y=by+(seed[1]+(p.i%7-3)*.6-by)*k;col=mix(bc,C.datos,k*.5);
+      a=.85*(1-clamp((Tl-p.dep-.9)/.6)*.85);if(Tl>2.6)a*=clamp(1-(Tl-2.6)/1.2);
+    }else{
+      // fase 2: cada partícula crece desde la base de su rama (o su punta) hasta su sitio
+      const k=ease(clamp((Tl-p.ta)/.45)),f=p.from||[p.x,p.y];
+      x=f[0]+(p.x-f[0])*k;y=f[1]+(p.y-f[1])*k;col=p.c;a=.85*k;
+      if(p.flower)a*=.65+.35*Math.sin(Ta*2.2+p.i);
+    }
+    if(!reduce&&Tl>p.ta&&p.y<TG.ground){const h=(TG.ground-p.y)/H;x+=Math.sin(Ta*.9+p.y*.012)*h*4}   // viento suave
+    if(!reduce){x+=Math.sin(Ta*1.3+p.i)*.35;y+=Math.cos(Ta*1.1+p.i*.7)*.35}
+    // el puntero aparta las partículas ya crecidas; vuelven con un muelle suave
+    let ox=0,oy=0;
+    if(Tl>p.ta+.45){const dx=x-mouse.x,dy=y-mouse.y,dm=Math.hypot(dx,dy),Rm=115;if(dm<Rm&&dm>.01){const f=(1-dm/Rm)**1.6*42;ox=dx/dm*f;oy=dy/dm*f}}
+    p.ox+=(ox-p.ox)*.14;p.oy+=(oy-p.oy)*.14;x+=p.ox;y+=p.oy;
+    if(a<=.01)continue;
+    cx.fillStyle=`rgba(${col[0]|0},${col[1]|0},${col[2]|0},${a})`;cx.fillRect(x-p.s,y-p.s,p.s*2,p.s*2);
+  }
+  cx.globalCompositeOperation='source-over';cx.font='11px "JetBrains Mono", monospace';
+  const placed=[];   // si un rótulo choca con otro, baja una línea
+  for(const l of TLBL){const la=clamp((Tl-l.t)/.8);if(la<=0)continue;
+    const w=cx.measureText(l.txt).width,x=Math.max(6,Math.min(W-w-6,l.side>0?l.x+14:l.x-14-w));let y=l.y;
+    while(placed.some(q=>x<q.x+q.w+8&&q.x<x+w+8&&Math.abs(q.y-y)<18))y+=18;placed.push({x,y,w});
+    cx.fillStyle=`rgba(14,12,9,${.82*la})`;cx.fillRect(x-6,y-9,w+12,18);cx.fillStyle=`rgba(201,193,176,${la})`;cx.fillText(l.txt,x,y+4)}
+}
+
+/* ===== tamaño: se reconstruye solo si el lienzo cambia de verdad (en móvil mide 100lvh y no cambia con la barra del navegador) ===== */
+let lastW=0,lastH=0;
+function build(){const r=cv.getBoundingClientRect();W=r.width;H=r.height;lastW=W;lastH=H;cv.width=W*DPR;cv.height=H*DPR;cache=SCENES.map(s=>s.dyn?null:s.f(0));treeBuild()}
+addEventListener('resize',()=>{const r=cv.getBoundingClientRect();if(Math.abs(r.width-lastW)>1||Math.abs(r.height-lastH)>1)build()});
+
+/* ===== scroll -> escena: la forma i+1 aparece mientras su sección sube del 75 % al 45 % de la pantalla ===== */
+const anchors=[...document.querySelectorAll('[data-escena]')].sort((a,b)=>a.dataset.escena-b.dataset.escena);
+function progress(){if(FORCE!==null)return +FORCE;const vh=innerHeight;let c=0;for(let j=1;j<anchors.length;j++)c+=clamp((vh*.75-anchors[j].getBoundingClientRect().top)/(vh*.3));return c}
+
+function drawLines(w,T){
+  if(w(5)>0){const q=proj(EMB[QUERY].p,T);cx.strokeStyle=`rgba(242,166,90,${w(5)*.7})`;cx.lineWidth=1;NB.forEach(n=>{const p=proj(EMB[n].p,T);cx.beginPath();cx.moveTo(q[0],q[1]);cx.lineTo(p[0],p[1]);cx.stroke()})}
+  if(w(7)>0){cx.strokeStyle=`rgba(185,162,255,${w(7)*.18})`;GE.forEach(([a,b])=>{cx.beginPath();cx.moveTo(W*GN[a].x,H*GN[a].y);cx.lineTo(W*GN[b].x,H*GN[b].y);cx.stroke()})}
+}
+function lbl(txt,x,y,col,a){cx.fillStyle=`rgba(${col.join(',')},${a})`;cx.fillText(txt,x,y)}
+function drawLabels(w){
+  cx.font='11px "JetBrains Mono", monospace';
+  if(w(1)>0){['ene','abr','jul','oct','dic'].forEach((m,j)=>lbl(m,W*(CH.x0+(CH.x1-CH.x0)*j/4)-8,H*CH.y0+22,[154,146,130],w(1)));lbl('· medidas de estaciones   — modelo',W*CH.x0+8,H*.16,[242,166,90],w(1));cx.save();cx.translate(W*CH.x0-16,H*.5);cx.rotate(-Math.PI/2);lbl('ET0 (mm/día)',-40,0,[154,146,130],w(1));cx.restore()}
+  if(w(2)>0)SEG.forEach(s=>lbl(s.n,W*s.x-24,H*s.y-Math.min(W,H)*.15,s.c,w(2)));
+  if(w(3)>0)NODES.forEach((x,k)=>lbl(NL[k],W*x-NL[k].length*3.3,H*.5+Math.min(W,H)*.09,[201,193,176],w(3)));
+  if(w(4)>0){lbl('cosecha medida',W*.1,H*.2,[242,166,90],w(4));lbl('previsión del modelo',W*.68,H*.2,[185,162,255],w(4));cx.strokeStyle=`rgba(239,233,220,${w(4)*.55})`;cx.setLineDash([3,4]);cx.beginPath();cx.moveTo(W*(.1+.82*.62),H*.12);cx.lineTo(W*(.1+.82*.62),H*.42);cx.stroke();cx.setLineDash([]);lbl('hoy',W*(.1+.82*.62)+6,H*.13,[239,233,220],w(4))}
+  if(w(5)>0)lbl('● producto consultado   — vecinos más cercanos = recomendación',W*.06,H*.12,[239,233,220],w(5));
+  if(w(6)>0){lbl('Agronomía',W*.66,H*.48,[242,166,90],w(6));lbl('Máster',W*.68,H*.6,[200,150,90],w(6));lbl('PhD · 3 papers',W*.7,H*.74,[170,130,90],w(6))}
+  if(w(7)>0)GN.forEach(n=>lbl(n.n,W*n.x-n.n.length*3.3,H*n.y+Math.min(W,H)*(n.r+.035),n.n==='LLM'?[239,233,220]:[185,162,255],w(7)));
+  if(w(8)>0){lbl('campo',W*.06,H*.3,[143,207,106],w(8));lbl('datos',W*.06,H*.3+16,[242,166,90],w(8));lbl('ia',W*.06,H*.3+32,[185,162,255],w(8))}
+}
+
+let cur=0,t0=performance.now(),last=null,treeOn=false,treeT=0;
+const REV=3;   // al subir, el árbol se deshace tres veces más rápido de lo que creció
+function get(i,T){return SCENES[i].dyn?SCENES[i].f(reduce?0:T):cache[i]}
+function frame(now){
+  requestAnimationFrame(frame);
+  if(document.hidden||document.documentElement.classList.contains('locked')){last=null;return}   // en pausa con una ficha abierta o la pestaña oculta
+  const T=(now-t0)/1000,target=progress(),dt=last===null?0:Math.min(.1,(now-last)/1000);last=now;
+  cur+=(reduce||FORCE!==null)?(target-cur):(target-cur)*.08;
+  cx.setTransform(DPR,0,0,DPR,0,0);cx.clearRect(0,0,W,H);
+  // final: al llegar al cierre, la trenza se recoge en una semilla y crece el árbol.
+  // Al subir se deshace al revés hasta volver a la trenza; si se vuelve a bajar a medias, sigue creciendo desde ahí.
+  const want=cur>LAST+.5;
+  if(reduce){treeOn=want;treeT=want?TEND:0}
+  else if(want){if(!treeOn){treeOn=true;treeT=0;TP.forEach(p=>p.ox=p.oy=0)}else treeT=Math.min(TEND,treeT+dt)}
+  else if(treeOn){treeT-=dt*REV;if(treeT<=0||cur<LAST-1){treeOn=false;treeT=0}}   // si se salta muy arriba, desaparece al instante
+  if(treeOn){treeDraw(treeT,T-treeT,T);return}
+  const c=Math.min(LAST,cur),i=Math.min(LAST-1,Math.floor(c)),f=c-i,A=get(i,T),B=get(i+1,T),pa=perm[i],pb=perm[i+1];
+  const grow=(reduce||FORCE!==null)?1:Math.min(1,T/2.6);
+  const w=j=>Math.max(0,1-Math.abs(c-j)*2.2);
+  drawLines(w,T);
+  cx.globalCompositeOperation='lighter';
+  for(let k=0;k<N;k++){
+    const a=A[pa[k]],b=B[pb[k]],p=PT[k];
+    const t=ease(clamp((f-p.d*.6)/.6));
+    const mx=(a.x+b.x)/2+p.b*W*.12,my=(a.y+b.y)/2+(i===0?H*.18:-H*.1)*Math.abs(p.b);
+    let x=(1-t)*(1-t)*a.x+2*(1-t)*t*mx+t*t*b.x,y=(1-t)*(1-t)*a.y+2*(1-t)*t*my+t*t*b.y;
+    if(!reduce){x+=Math.sin(T*1.3+k)*.5;y+=Math.cos(T*1.1+k*.7)*.5}
+    if(c<.02&&grow<1){const g=clamp((grow*1.4-(1-(H*.84-a.y)/(H*.7)))*1.6);if(g<=0)continue;y=H*.84+(y-H*.84)*g}   // la planta crece al cargar
+    const col=mix(a.c,b.c,t),s=a.s+(b.s-a.s)*t;
+    cx.fillStyle=`rgba(${col[0]|0},${col[1]|0},${col[2]|0},.85)`;cx.fillRect(x-s,y-s,s*2,s*2);
+  }
+  cx.globalCompositeOperation='source-over';
+  drawLabels(w);
+}
+cv.addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top});
+cv.addEventListener('pointerleave',()=>{mouse.x=mouse.y=-1e4});
+build();requestAnimationFrame(frame);
+})();
+
+</script>
+</body>
+</html>
